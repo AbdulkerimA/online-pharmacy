@@ -73,19 +73,22 @@
             </div>
         </section>
 
+        <section id="sec3">
+
+        </section>
+
         <section id="sec2">
             <div id="headline">
-                <p>become a member today</p>
+                <p id="head">become a member today</p>
                 <p>
                     get discount benefits
                 </p>
-                <p>
-                    get medicen refill every month
-                </p>
             </div>
-            <div id="">
+            <div id="attention">
                 <p>
                     save 5% on every order,save 20% on daily essentials
+                    <br>
+                    get medicen refill every month
                 </p>
                 <button id="sub">
                     Register now

@@ -167,4 +167,48 @@ body main #sec1 #cta a button:hover {
 body main #sec1 #cta a button:active {
   border: 1px solid #0096c7;
   outline: none;
+}
+body main #sec2 {
+  background: rgb(144, 224, 239);
+  background: linear-gradient(90deg, rgb(144, 224, 239) 44%, rgb(202, 240, 248) 80%);
+  display: flex;
+  justify-content: space-evenly;
+}
+body main #sec2 #headline {
+  margin: 1vh 1vw;
+}
+body main #sec2 #headline p {
+  font-size: 1.1rem;
+  color: #0096c7;
+}
+body main #sec2 #headline #head {
+  font-size: 1.5rem;
+}
+body main #sec2 #attention {
+  display: flex;
+  flex-direction: column;
+  margin: 1vh 1vw;
+}
+body main #sec2 #attention p {
+  font-size: 1.1rem;
+  color: #0096c7;
+}
+body main #sec2 #attention button {
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #0096c7;
+  border-radius: 1vh;
+  border: none;
+  outline: none;
+  padding: 1vh 2vw;
+  margin-bottom: 1vh;
+}
+body main #sec2 #attention button:hover {
+  transform: scale(1.1);
+}
+body main #sec2 #familypic {
+  margin: 1vh 2vw;
+}
+body main #sec2 #familypic img {
+  background-color: transparent;
 }/*# sourceMappingURL=index.css.map */

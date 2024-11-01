@@ -166,5 +166,49 @@ body{
                 }
             }
         }/*end of section one*/
+        #sec2{
+            background: rgb(144,224,239);
+            background: linear-gradient(90deg, rgba(144,224,239,1) 44%, rgba(202,240,248,1) 80%); 
+            display: flex;
+            justify-content: space-evenly;
+            #headline{
+                margin: 1vh 1vw;
+                p{
+                    font-size: 1.1rem;
+                    color: #0096c7;
+                }
+                #head{
+                    font-size: 1.5rem;
+                }
+            }
+            #attention{
+                display: flex;
+                flex-direction: column;
+                margin: 1vh 1vw;
+                p{
+                    font-size: 1.1rem;
+                    color: #0096c7;
+                }
+                button{
+                    font-size: 1rem;
+                    color: #ffffff;
+                    background-color: #0096c7;
+                    border-radius: 1vh;
+                    border: none;
+                    outline: none;
+                    padding: 1vh 2vw;
+                    margin-bottom: 1vh;
+                }
+                button:hover{
+                    transform: scale(1.1);
+                }
+            }
+            #familypic{
+                margin:1vh 2vw;
+                img{
+                    background-color: transparent;
+                }
+            }
+        }
     }
 }

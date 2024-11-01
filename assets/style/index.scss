@@ -1,8 +1,170 @@
 *{
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
+    text-transform: capitalize;
 }
 
 body{
-    
+    background-color: #f8fafa;
+    nav{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        #top{
+            width: 100%;
+            padding:15px 1vw;
+            display: flex;
+            align-items: center;
+            #logo{
+                width: 60%;
+                display: flex;
+                align-items: center;
+                img{
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+            #links{
+                width: 40%;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                span{
+                    margin-right: 2vw;
+                    a{
+                        font-size:1.2rem;
+                        color: #90e0ef;
+                    }
+                    i{
+                        color: #90e0ef;
+                        font-size: 1.2rem;
+                    }
+                }
+                #sub{
+                    background-color: #90e0ef;
+                    color: #ffffff;
+                    font-weight:bold;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 1vh;
+                    padding: 1vh 1vw;
+                }
+            }
+        }
+        #bottom{
+            width: 100%;
+            padding: 15px 0px;
+            display: flex;
+            justify-content: center;
+            font-size: 1rem;
+            background-color: #90e0ef;
+            span{
+                margin-right: 1vw;
+                border: 1px solid #ffffff;
+                border-radius:1vh ;
+                padding: 1vh 1vw;
+                a{
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    margin: 1vh 0px;
+                    color:#ffffff;
+                }
+            }
+            span:hover{
+                background-color: #ffffff;
+                a{
+                    color: #90e0ef;
+                }
+            }
+        }
+    }
+    main{
+        #sec1{
+            width: 100%;
+            margin: 5vh 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #caf0f8;
+            border-radius: 1vh;
+            #headline{
+                margin-bottom: 0px;
+                margin-top: 20px;
+                padding: 0px;
+                height: fit-content;
+                h2{
+                    color: #0096c7;
+                    font-size: 2rem;
+                    padding: 0px;
+                }
+                p{
+                    color: #0096c7;
+                    font-size: 1rem;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+            #search{
+                height: 5vh;
+                width: 50%;
+                margin: 4vh 0px;
+                form{
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    input{
+                        height: 100%;
+                        width: 100%;
+                        padding:0px 2vw;
+                        font-size: 1rem;
+                        border: 1px solid;
+                        border-radius: 1vh;
+                    }
+                    label{
+                        position: relative;
+                        left: -45px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        i{
+                            height: 100%;
+                            padding: 0px 1vw;
+                            border:none;
+                            border-radius: 0px 1vh 1vh 0px;
+                            background-color: transparent;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: #0096c7;
+                        }
+                    }
+                }
+            }
+            #cta{
+                margin: 2vh 0px;
+                margin-bottom: 10vh;
+                a{
+                    button{
+                        background-color: #0096c7;
+                        color: #ffffff;
+                        outline: none;
+                        border: none;
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                        padding: 2vh 3vw;
+                        border-radius: 1vh;
+                    }
+                    button:hover{
+                        transform: scale(1.1);
+                    }
+                    button:active{
+                        border: 1px solid #0096c7;
+                        outline: none;
+                    }
+                }
+            }
+        }/*end of section one*/
+    }
 }

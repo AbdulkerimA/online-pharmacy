@@ -73,11 +73,69 @@
             </div>
         </section>
 
-        <section id="sec3">
-
+        <section id="sec2">
+            <div id="left">
+                <img src="./assets/pics/order.jpg" alt="order">
+            </div>
+            <div id="right">
+                <h4>
+                    how does it works
+                </h4>
+                <div id="cont">
+                    <span id="">
+                        <span id="num">1</span>
+                        <p>
+                            select your purchase and add to cart
+                        </p>
+                    </span>
+                    <span id="">
+                        <span id="num">2</span>
+                        <p>
+                            go to cart and check out
+                        </p>
+                    </span>
+                    <span id="">
+                        <span id="num">3</span>
+                        <p>
+                            we will confirm your order by calling
+                        </p>
+                    </span>
+                    <span id="">
+                        <span id="num">4</span>
+                        <p>
+                            now sit back, your medicen will be deliverd
+                            to your door step.
+                        </p>
+                    </span>
+                </div>
+            </div>
         </section>
 
-        <section id="sec2">
+        <section id="sec3">
+            <div id="notice">
+                <h4>
+                    todyes best deal
+                </h4>
+                <span><i><a href="./">view all ></a></i></span>
+            </div>
+            <div id="products">
+                <?php for ($i = 0; $i < 16; $i++): ?>
+                    <div id="product">
+                        <img src="./assets/pics/face_wash_cleansers.png" alt="product">
+                        <span id="pname">
+                            product name
+                        </span>
+                        <span id="price">250 birr</span>
+                        <span id="discount">20% off</span>
+                        <button>
+                            add to cart
+                        </button>
+                    </div>
+                <?php endfor ?>
+            </div>
+        </section>
+
+        <section id="sec4">
             <div id="headline">
                 <p id="head">become a member today</p>
                 <p>

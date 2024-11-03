@@ -114,7 +114,7 @@
         <section id="sec3">
             <div id="notice">
                 <h4>
-                    todyes best deal
+                    today's best deal
                 </h4>
                 <span><i><a href="./">view all ></a></i></span>
             </div>
@@ -156,7 +156,120 @@
                 <img src="./assets/pics/PlusFamily.png" alt="become a member">
             </div>
         </section>
+
+        <!-- products section -->
+        <section id="sec5">
+            <header>
+                <h3>
+                    products
+                </h3>
+            </header>
+            <div id="products">
+                <?php for ($i = 0; $i < 16; $i++): ?>
+                    <div id="product">
+                        <img src="./assets/pics/beard_oil.png" alt="product">
+                        <span id="pname">
+                            product name
+                        </span>
+                        <span id="price">250 birr</span>
+                        <button>
+                            add to cart
+                        </button>
+                    </div>
+                <?php endfor ?>
+            </div>
+            <div id="explore">
+                <a href="./products.php">
+                    explore more <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- testimonials section -->
+        <section id="sec6">
+            <header>
+                <h3>
+                    testimonials
+                </h3>
+            </header>
+            <div id="testimonialssection">
+                <div id="leftclick">
+                    <?php echo "<" ?>
+                </div>
+                <div id="testimonialsbox">
+                    <div id="testimonial">
+                        <img src="./" alt="user">
+                        <p id="comment">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Sed magni voluptatem doloribus quasi illum itaque officiis sint voluptate
+                            accusamus cupiditate voluptates tempore vitae, sapiente,
+                            natus quaerat fugiat dolore cum labore?
+                        </p>
+                    </div>
+                </div>
+                <div id="rightclick">
+                    >
+                </div>
+            </div>
+        </section>
+
+        <!-- subscribe -->
+        <section id="sec4">
+            <div id="headline">
+                <p id="head">become a member today</p>
+                <p>
+                    get discount benefits
+                </p>
+            </div>
+            <div id="attention">
+                <p>
+                    save 5% on every order,save 20% on daily essentials
+                    <br>
+                    get medicen refill every month
+                </p>
+                <button id="sub">
+                    Register now
+                </button>
+            </div>
+            <div id="familypic">
+                <img src="./assets/pics/PlusFamily.png" alt="become a member">
+            </div>
+        </section>
     </main>
+    <footer>
+        <div id="top">
+            <h3>Navigation</h3>
+            <ul>
+                <li>home</li>
+                <li>about us</li>
+                <li>products</li>
+            </ul>
+        </div>
+        <div id="bottom">
+            <div id="copyright">
+                all rights reserved by MEDIAEVEN &copy; 2024
+            </div>
+            <div id="getapp">
+                <div id="android">
+                    <img src="./assets/" alt="android">
+                    <p>
+                        download from playstore
+                    </p>
+                </div>
+                <div id="ios">
+                    <img src="./assets/pics/" alt="ios">
+                    <p>
+                        download from apple store
+                    </p>
+                </div>
+            </div>
+            <div id="socialmedias">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+                <i class="fa fa-telegram" aria-hidden="true"></i>
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

@@ -10,41 +10,8 @@
 </head>
 
 <body>
-    <nav>
-        <div id="top">
-            <div id="logo">
-                <img src="./" alt="midick">
-            </div>
-            <div id="links">
-                <span><a href="./">Home</a></span>
-                <span><a href="./">about us</a></span>
-                <span id="sub">subscribe</span>
-                <span>
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                </span>
-            </div>
-        </div>
-
-        <div id="bottom">
-            <span>
-                <a href="./">medcines</a>
-            </span>
-            <span>
-                <a href="./">baby care</a>
-            </span>
-            <span>
-                <a href="./">skine care</a>
-            </span>
-            <span>
-                <a href="./">women care</a>
-            </span>
-            <span>
-                <a href="./">medical equipments</a>
-            </span>
-        </div>
-
-    </nav>
-
+    <!-- nav -->
+    <?php require_once("./nav.php") ?>
     <!-- main -->
     <main>
         <section id="sec1">
@@ -236,40 +203,8 @@
             </div>
         </section>
     </main>
-    <footer>
-        <div id="top">
-            <h3>Navigation</h3>
-            <ul>
-                <li>home</li>
-                <li>about us</li>
-                <li>products</li>
-            </ul>
-        </div>
-        <div id="bottom">
-            <div id="copyright">
-                all rights reserved by MEDIAEVEN &copy; 2024
-            </div>
-            <div id="getapp">
-                <div id="android">
-                    <img src="./assets/" alt="android">
-                    <p>
-                        download from playstore
-                    </p>
-                </div>
-                <div id="ios">
-                    <img src="./assets/pics/" alt="ios">
-                    <p>
-                        download from apple store
-                    </p>
-                </div>
-            </div>
-            <div id="socialmedias">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-                <i class="fa fa-telegram" aria-hidden="true"></i>
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-            </div>
-        </div>
-    </footer>
+    <!-- footer -->
+    <?php require_once("./footer.php") ?>
 </body>
 
 </html>

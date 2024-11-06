@@ -1,0 +1,120 @@
+* {
+  padding: 0px;
+  text-transform: capitalize;
+  color: #003755;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  padding: 0px 20px;
+}
+body main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*end of values*/
+}
+body main #aboutus header {
+  width: 100%;
+  margin: 10vh 0vh 5vh 0vh;
+}
+body main #aboutus header h1 {
+  font-size: 1.5rem;
+  margin-bottom: 5vh;
+}
+body main #aboutus header h3 {
+  font-size: 1.3rem;
+  padding-left: 10px;
+  margin-bottom: 5vh;
+}
+body main #aboutus p {
+  font-size: 1.1rem;
+  width: 80%;
+  padding-left: 20px;
+  line-height: 2rem;
+}
+body main #values {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main #values header {
+  width: 100%;
+  margin: 5vh 0vh;
+  display: flex;
+  justify-content: center;
+}
+body main #values header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+body main #values #cont {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+body main #values #cont div {
+  width: 25vw;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1vh;
+  border: 1px solid #003755;
+  margin: 15px;
+  padding: 10px;
+}
+body main #values #cont div img {
+  height: 200px;
+  width: 200px;
+  margin: 10px;
+}
+body main #values #cont div p {
+  font-size: 1rem;
+}
+body main #values #cont div:hover {
+  transform: scale(1.1);
+}
+body main #thetheam {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main #thetheam header {
+  width: 100%;
+  margin: 5vh 0vh;
+  display: flex;
+  justify-content: center;
+}
+body main #thetheam header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+body main #thetheam #profetionals {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+}
+body main #thetheam #profetionals div {
+  border: 1px solid #003755;
+  border-radius: 1vh;
+  padding: 10px;
+  margin: 5px;
+}
+body main #thetheam #profetionals div img {
+  height: 35vh;
+  width: 20vw;
+  margin-bottom: 10px;
+}
+body main #thetheam #profetionals div p {
+  padding: 10px;
+  font-size: 0.9rem;
+}
+body main #thetheam #profetionals div p #name {
+  font-size: 1rem;
+  font-weight: bold;
+}/*# sourceMappingURL=about.css.map */

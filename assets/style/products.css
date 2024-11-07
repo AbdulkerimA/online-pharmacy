@@ -37,32 +37,41 @@ body main #products {
 }
 body main #products #filterby {
   width: 25%;
+  /*when the option list is active*/
 }
-body main #products #filterby #cont {
+body main #products #filterby .cont {
   width: 100%;
   padding: 10px;
-  border-bottom: 1px solid gray;
+  height: 20px;
+  overflow-y: hidden;
+  position: relative;
 }
-body main #products #filterby #cont #header {
+body main #products #filterby .cont #header {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid gray;
   padding-bottom: 5px;
 }
-body main #products #filterby #cont #header #text {
+body main #products #filterby .cont #header #text {
   font-size: 0.9rem;
 }
-body main #products #filterby #cont #header #icons {
+body main #products #filterby .cont #header #icon {
   position: relative;
 }
-body main #products #filterby #cont #header #icons i {
-  position: absolute;
+body main #products #filterby .cont #header #icon i {
   font-size: 0.9rem;
+  color: #003755;
 }
-body main #products #filterby #cont #options {
+body main #products #filterby .cont #options {
   font-size: 0.8rem;
   margin: 10px 0px;
+  padding-bottom: 5px;
   overflow-y: auto;
+  border-bottom: 1px solid gray;
+}
+body main #products #filterby .active {
+  height: -moz-fit-content;
+  height: fit-content;
 }
 body main #products #productscont {
   width: 75%;

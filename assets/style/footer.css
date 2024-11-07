@@ -31,6 +31,7 @@ body footer #top ul li {
 body footer #bottom {
   display: flex;
   width: 100%;
+  height: fit-content;
   position: relative;
   border-top: 1px solid #003755;
   padding-top: 2vh;
@@ -81,20 +82,20 @@ body footer #bottom #getapp #ios {
 body footer #bottom #getapp #ios img {
   width: 60px;
   height: 60px;
+  margin: 10px;
 }
 body footer #bottom #getapp #ios p {
   color: #ffffff;
 }
 body footer #bottom #socialmedias {
   width: 20%;
-  height: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   padding: 5px;
 }
 body footer #bottom #socialmedias i {
-  margin: 5px;
-  font-size: 1.5rem;
+  margin: 1vh;
+  font-size: 2.5rem;
   color: #003755;
 }

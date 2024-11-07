@@ -20,24 +20,27 @@
         </section>
         <section id="products">
             <div id="filterby">
-                <div id="cont">
-                    <div id="header">
-                        <span id="text">
-                            catagory
-                        </span>
-                        <span id="icon">
-                            <i class="fa fa-plus" aria-hidden="true"></i>
-                            <i class="fa fa-minus" aria-hidden="true"></i>
-                        </span>
-                    </div>
-                    <div id="options">
-                        <div id="option">
-                            <input type="checkbox" name="personalcare" id="pcare">
-                            <label for="prsonalcare">personal care</label>
+                <?php for ($i = 0; $i < 5; $i++): ?>
+                    <div class="cont ">
+                        <div id="header">
+                            <span id="text">
+                                catagory
+                            </span>
+                            <span id="icon">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                <!--<i class="fa fa-minus" aria-hidden="true"></i>-->
+                            </span>
                         </div>
+                        <?php for ($j = 0; $j < 3; $j++): ?>
+                            <div id="options">
+                                <div id="option">
+                                    <input type="checkbox" name="personalcare" id="pcare">
+                                    <label for="prsonalcare">personal care</label>
+                                </div>
+                            </div>
+                        <?php endfor ?>
                     </div>
-                </div>
-
+                <?php endfor ?>
             </div>
             <div id="productscont">
                 <?php for ($i = 0; $i < 16; $i++): ?>

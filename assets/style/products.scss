@@ -34,10 +34,12 @@ body{
             display: flex;
             #filterby{
                 width: 25%;
-                #cont{
+                .cont{
                     width: 100%;
                     padding: 10px;
-                    border-bottom: 1px solid gray;
+                    height: 20px;
+                    overflow-y: hidden;
+                    position: relative;
                     #header{
                         display: flex;
                         justify-content: space-between;
@@ -46,19 +48,25 @@ body{
                         #text{
                             font-size: .9rem;
                         }
-                        #icons{
+                        #icon{
                             position: relative;
                             i{
-                                position: absolute;
                                 font-size: .9rem;
+                                color: #003755;
                             }
                         }
                     }
                     #options{
                         font-size: .8rem;
                         margin: 10px 0px;
+                        padding-bottom: 5px;
                         overflow-y: auto;
+                        border-bottom: 1px solid gray;
                     }
+                }
+                /*when the option list is active*/
+                .active{
+                    height: fit-content;
                 }
             }
             #productscont{

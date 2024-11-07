@@ -68,8 +68,8 @@ body main #values #cont div {
   padding: 10px;
 }
 body main #values #cont div img {
-  height: 200px;
-  width: 200px;
+  height: 10vw;
+  width: 10vw;
   margin: 10px;
 }
 body main #values #cont div p {
@@ -106,7 +106,7 @@ body main #thetheam #profetionals div {
   margin: 5px;
 }
 body main #thetheam #profetionals div img {
-  height: 35vh;
+  height: 25vw;
   width: 20vw;
   margin-bottom: 10px;
 }

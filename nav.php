@@ -13,7 +13,9 @@
             <span><a href="./products.php">products</a></span>
             <span id="sub">subscribe</span>
             <span>
-                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <a href="./cart.php">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                </a>
             </span>
         </div>
     </div>

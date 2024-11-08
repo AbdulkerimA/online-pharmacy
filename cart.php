@@ -13,6 +13,24 @@ $productsOnCart = [
         "pricePerUnit" => 250,
         "productAmountAddedonTheCart" => 1
     ],
+    [
+        "pic" => "./assets/pics/face_wash_cleansers.png",
+        "proName" => "name",
+        "pricePerUnit" => 250,
+        "productAmountAddedonTheCart" => 1
+    ],
+    [
+        "pic" => "./assets/pics/face_wash_cleansers.png",
+        "proName" => "name",
+        "pricePerUnit" => 250,
+        "productAmountAddedonTheCart" => 1
+    ],
+    [
+        "pic" => "./assets/pics/face_wash_cleansers.png",
+        "proName" => "name",
+        "pricePerUnit" => 250,
+        "productAmountAddedonTheCart" => 1
+    ],
 ];
 
 $amountOfProducts = count($productsOnCart);

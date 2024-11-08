@@ -11,6 +11,8 @@ body {
 }
 body main {
   width: 96%;
+  height: -moz-fit-content;
+  height: fit-content;
   margin-top: 40px;
   padding: 20px;
   background-color: #caf0f8;
@@ -41,11 +43,16 @@ body main #cart #thecart {
   flex-direction: column;
   align-items: center;
   position: relative;
+}
+body main #cart #thecart #itemscont {
+  width: 95%;
+  height: 70%;
   overflow-y: scroll;
+  scrollbar-width: none;
   overflow-x: hidden;
 }
-body main #cart #thecart #itemoncart {
-  width: 100%;
+body main #cart #thecart #itemscont #itemoncart {
+  width: 90%;
   display: flex;
   align-items: center;
   position: relative;
@@ -53,39 +60,39 @@ body main #cart #thecart #itemoncart {
   border: 1px solid gray;
   border-radius: 1vh;
 }
-body main #cart #thecart #itemoncart img {
+body main #cart #thecart #itemscont #itemoncart img {
   width: 70px;
   height: 70px;
   margin: 10px;
   border: 1px solid #003755;
 }
-body main #cart #thecart #itemoncart #info {
+body main #cart #thecart #itemscont #itemoncart #info {
   font-size: 1.1rem;
   color: #003755;
 }
-body main #cart #thecart #itemoncart #amount {
+body main #cart #thecart #itemscont #itemoncart #amount {
   position: absolute;
   left: 50%;
 }
-body main #cart #thecart #itemoncart #amount span {
+body main #cart #thecart #itemscont #itemoncart #amount span {
   padding: 10px;
   border: 1px solid #003755;
 }
-body main #cart #thecart #itemoncart #amount #add i, body main #cart #thecart #itemoncart #amount #decreas i {
+body main #cart #thecart #itemscont #itemoncart #amount #add i, body main #cart #thecart #itemscont #itemoncart #amount #decreas i {
   font-size: 1.3rem;
 }
-body main #cart #thecart #itemoncart #amount #value {
+body main #cart #thecart #itemscont #itemoncart #amount #value {
   font-size: 1rem;
   font-weight: bold;
 }
-body main #cart #thecart #itemoncart #cancel {
+body main #cart #thecart #itemscont #itemoncart #cancel {
   position: absolute;
   right: 10px;
   padding: 1vh;
   border: 1px solid #003755;
   border-radius: 0.5vh;
 }
-body main #cart #thecart #itemoncart #cancel:hover {
+body main #cart #thecart #itemscont #itemoncart #cancel:hover {
   transform: scale(0.98);
 }
 body main #cart #thecart #checkout {

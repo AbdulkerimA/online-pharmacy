@@ -1,0 +1,293 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: sans-serif;
+  text-transform: capitalize;
+  text-decoration: none;
+  scrollbar-width: 0px;
+}
+
+body {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  background-color: #04344D;
+}
+body aside {
+  width: 15%;
+  background-color: #04344D;
+}
+body aside #menus {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body aside #menus div {
+  width: 95%;
+  height: 8vh;
+  border-radius: 1vh;
+  background-color: #1A4B66;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 1vh 0px;
+}
+body aside #menus div i {
+  color: #fff;
+  font-size: 1.2rem;
+}
+body aside #menus div a {
+  font-size: 1.2rem;
+  color: #fff;
+}
+body main {
+  width: 85%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  overflow: hidden;
+}
+body main nav {
+  background-color: #fff;
+  width: 99%;
+  height: 5vh;
+  padding: 2vh 1vw;
+  display: flex;
+  align-items: center;
+  border-radius: 1vh 0px 0px 0px;
+  box-shadow: 2px 2px 3px #04344D;
+}
+body main nav div {
+  width: 70%;
+}
+body main nav #profile {
+  width: 15%;
+  height: 100%;
+  padding: 1vh;
+  color: #04344D;
+  display: flex;
+  align-items: center;
+}
+body main nav i {
+  font-size: 2rem;
+  color: #04344D;
+}
+body main #main {
+  width: 100%;
+  height: 90%;
+  padding: 5vh 4vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*dashboard style*/
+  /*add products page*/
+  /*see all users*/
+}
+body main #main #dashboard {
+  width: 95%;
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  border: 1px solid #04344D;
+  border-radius: 1vh;
+  box-shadow: 2px 2px 5px #1A4B66;
+  padding: 2vh 2vw;
+  padding-top: 5vh;
+  color: #04344D;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /*chart style*/
+  /*styling the table*/
+}
+body main #main #dashboard #info {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 5vh 0px;
+}
+body main #main #dashboard #info div {
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1vh;
+  box-shadow: 2px 2px 10px #1A4B66;
+}
+body main #main #dashboard #info div span {
+  margin: 10px;
+}
+body main #main #dashboard #info #total {
+  background-color: #F5FDF3;
+  color: #007F5F;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+body main #main #dashboard #info #pnum {
+  background-color: #D3F2FA;
+  color: #04344D;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+body main #main #dashboard #info #sub {
+  background-color: #F5FDF3;
+  color: #007F5F;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+body main #main #dashboard #chart {
+  width: 95%;
+  height: 40vh;
+}
+body main #main #dashboard #users {
+  width: 95%;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 10vh 0px;
+  padding: 2px;
+}
+body main #main #addproduct {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /*overflow-y: scroll;
+  scrollbar-width: none;*/
+}
+body main #main #addproduct #uploadimg {
+  width: 80%;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 5px dashed #04344D;
+  margin: 2vh 2vw;
+  background-color: #fff;
+}
+body main #main #addproduct #uploadimg h2 {
+  font-size: 1.3rem;
+  font-family: sans-serif;
+  color: #04344D;
+}
+body main #main #addproduct #uploadimg form input {
+  width: 100%;
+  height: 100%;
+}
+body main #main #addproduct #propertyinfo {
+  width: 80%;
+  background-color: #fff;
+  border-radius: 1vh;
+  padding: 1vh 2vw;
+}
+body main #main #addproduct #propertyinfo h2 {
+  font-size: 1.3rem;
+  font-family: sans-serif;
+  color: #04344D;
+  margin-bottom: 1vh;
+}
+body main #main #addproduct #propertyinfo form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+body main #main #addproduct #propertyinfo form div {
+  margin: 1vh 1vw;
+  display: flex;
+  flex-direction: column;
+}
+body main #main #addproduct #propertyinfo form div label {
+  font-size: 0.9rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #04344D;
+  margin: 5px 0px;
+}
+body main #main #addproduct #propertyinfo form div input {
+  padding: 1vh;
+  font-size: 0.9rem;
+  border-radius: 1vh;
+  border: 1px solid #04344D;
+}
+body main #main #addproduct #propertyinfo form div #pname {
+  width: 25vw;
+}
+body main #main #addproduct #propertyinfo form div #pcatagory {
+  width: 25vw;
+}
+body main #main #addproduct #propertyinfo form div textarea {
+  min-width: 50vw;
+  max-width: 50vw;
+  min-height: 10vw;
+  border-radius: 1vh;
+  outline: none;
+  border: 1px solid #04344D;
+}
+body main #main #addproduct #propertyinfo form button {
+  width: 15vw;
+  margin: 5px 2vw;
+  padding: 2vh 2vw;
+  font-size: 1rem;
+  color: #04344D;
+  border: 1px solid #04344D;
+  border-radius: 1vh;
+  background-color: #fff;
+}
+body main #main #addproduct #propertyinfo form button:hover {
+  transform: scale(0.98);
+}
+body main #main #customers, body main #main #viewproducts, body main #main #users {
+  width: 90%;
+  height: 100%;
+  padding: 2px;
+}
+body main #main #customers table thead, body main #main #viewproducts table thead, body main #main #users table thead {
+  background-color: #1A4B66;
+}
+body main #main #customers table thead tr, body main #main #viewproducts table thead tr, body main #main #users table thead tr {
+  border: none;
+  border-bottom: 0.5px solid #fff;
+}
+body main #main #customers table thead tr th, body main #main #viewproducts table thead tr th, body main #main #users table thead tr th {
+  color: #fff;
+}
+body main #main #customers table tbody tr, body main #main #viewproducts table tbody tr, body main #main #users table tbody tr {
+  border: none;
+  border-bottom: 1px solid #04344D;
+}
+body main #main #customers table tbody tr td, body main #main #viewproducts table tbody tr td, body main #main #users table tbody tr td {
+  border: none;
+  color: #04344D;
+}
+body main #main #customers table tbody tr td a button, body main #main #viewproducts table tbody tr td a button, body main #main #users table tbody tr td a button {
+  padding: 1vh 2vw;
+  border: none;
+  background-color: #F5FDF3;
+  border-radius: 1vh;
+  color: #007F5F;
+  font-size: 1rem;
+  margin: 0px 5px;
+}
+body main #main #customers table tbody tr td a #delete, body main #main #viewproducts table tbody tr td a #delete, body main #main #users table tbody tr td a #delete {
+  background-color: #FCE7E8;
+  color: #E63946;
+}
+body main #main #customers table tbody tr:nth-child(even), body main #main #viewproducts table tbody tr:nth-child(even), body main #main #users table tbody tr:nth-child(even) {
+  background-color: #D3F2FA;
+}
+body main #main #customers .js-datatable .datatable-search, body main #main #viewproducts .js-datatable .datatable-search, body main #main #users .js-datatable .datatable-search {
+  width: 30vw;
+  height: 5vh;
+  border: 2px soild #04344D;
+  outline: none;
+}
+body main #main #customers .datatable-search:focus, body main #main #viewproducts .datatable-search:focus, body main #main #users .datatable-search:focus {
+  outline: 2px solid #D3F2FA;
+}/*# sourceMappingURL=provider.css.map */

@@ -1,0 +1,307 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+    text-transform: capitalize;
+    text-decoration: none;
+    scrollbar-width: 0px;
+}
+body{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    background-color: #04344D;
+    aside{
+        width: 15%;
+        background-color: #04344D;
+        #menus{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            div{
+                width: 95%;
+                height: 8vh;
+                border-radius: 1vh;
+                background-color: #1A4B66;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                margin: 1vh 0px;
+                i{
+                    color: #fff;
+                    font-size: 1.2rem;
+                }
+                a{
+                    font-size: 1.2rem;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    main{
+        width: 85%;
+        height: 100%;
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        background-color: #fff;
+        overflow: hidden;
+        nav{
+            background-color: #fff;
+            width: 99%;
+            height: 5vh;
+            padding: 2vh 1vw;
+            display: flex;
+            align-items: center;
+            border-radius:1vh 0px 0px 0px;
+            box-shadow: 2px 2px 3px #04344D;
+            div{
+                width: 70%;
+            }
+            #profile{
+                width: 15%;
+                height:100%;
+                padding: 1vh;
+                color: #04344D;
+                display: flex;
+                align-items: center;
+            }
+            i{
+                font-size: 2rem;
+                color: #04344D;
+            }
+
+        }
+        // content container
+        #main{
+            width: 100%;
+            height: 90%;
+            padding: 5vh 4vw; 
+            // background-color: yellow;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /*dashboard style*/
+            #dashboard{
+                width: 95%;
+                height: 100%;
+                overflow-y: scroll;
+                scrollbar-width: none;
+                border: 1px solid #04344D;
+                border-radius: 1vh;
+                box-shadow: 2px 2px 5px #1A4B66;
+                padding: 2vh 2vw;
+                padding-top: 5vh;
+                color: #04344D;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                #info{
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    margin: 5vh 0px;
+                    div{
+                        width: 25vw;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 1vh;
+                        box-shadow: 2px 2px 10px #1A4B66;
+                        span{
+                            margin: 10px;
+                        }
+                    }
+                    #total{
+                        background-color: #F5FDF3;
+                        color: #007F5F;
+                        font-size: 1.1rem;
+                        font-weight: bold;
+                    }
+                    #pnum{
+                        background-color:#D3F2FA;
+                        color: #04344D;
+                        font-size: 1.1rem;
+                        font-weight: bold;
+                    }
+                    #sub{
+                        background-color: #F5FDF3;
+                        color: #007F5F;
+                        font-size: 1.1rem;
+                        font-weight: bold;
+                    }
+                }
+                /*chart style*/
+                #chart{
+                    width: 95%;
+                    height: 40vh;
+                }
+                /*styling the table*/
+                #users{
+                    width: 95%;
+                    height: fit-content;
+                    margin: 10vh 0px;
+                    // background-color: #007F5F;
+                    padding: 2px;
+                }
+            }
+
+            /*add products page*/
+            #addproduct{
+                width: 90%;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                /*overflow-y: scroll;
+                scrollbar-width: none;*/
+                #uploadimg{
+                    width: 80%;
+                    height: 30vh;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    border: 5px dashed #04344D;
+                    margin: 2vh 2vw;
+                    background-color: #fff;
+                    h2{
+                        font-size: 1.3rem;
+                        font-family: sans-serif;
+                        color:#04344D;
+                    }
+                    form{
+                        input{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+
+                #propertyinfo{
+                    width: 80%;
+                    background-color: #fff;
+                    border-radius: 1vh;
+                    padding: 1vh 2vw;
+                    h2{
+                        font-size: 1.3rem;
+                        font-family: sans-serif;
+                        color:#04344D;
+                        margin-bottom: 1vh;
+                    }
+                    form{
+                        width: 100%;
+                        display: flex;
+                        flex-wrap: wrap;
+                        div{
+                            margin: 1vh 1vw;
+                            display: flex;
+                            flex-direction: column;
+                            label{
+                                font-size: .9rem;
+                                font-family: Arial, Helvetica, sans-serif;
+                                color: #04344D;
+                                margin: 5px 0px;
+                            }    
+                            input{
+                                padding: 1vh;
+                                font-size: .9rem;
+                                border-radius: 1vh;
+                                border: 1px solid #04344D;
+                            }
+                            #pname{
+                                width: 25vw;
+                            }
+                            #pcatagory{
+                                width: 25vw;
+                            }
+                            textarea{
+                                min-width: 50vw;
+                                max-width: 50vw;
+                                min-height: 10vw;
+                                border-radius: 1vh;
+                                outline: none;
+                                border: 1px solid #04344D;
+                            }
+                        }
+                        button{
+                            width: 15vw;
+                            margin: 5px 2vw;
+                            padding: 2vh 2vw;
+                            font-size: 1rem;
+                            color: #04344D;
+                            border: 1px solid #04344D;
+                            border-radius: 1vh;
+                            background-color: #fff;
+                        }
+                        button:hover{
+                            transform: scale(.98);
+                        }
+                    }
+                }
+            }
+
+            /*see all users*/
+            #customers, #viewproducts, #users{
+                width:90%;
+                height: 100%;
+                padding: 2px;
+                table{
+                    // margin: 10vh 1vw;
+                    thead{
+                        background-color: #1A4B66;
+                        tr{
+                            border: none;
+                            border-bottom: .5px solid #fff;
+                            th{
+                                color: #fff;
+                            }
+                        }
+                    }
+                    tbody{
+                        tr{
+                            border: none;
+                            border-bottom: 1px solid #04344D;
+                            td{
+                                border: none;
+                                color: #04344D;
+                                a{
+                                    button{
+                                        padding: 1vh 2vw;
+                                        border: none;
+                                        background-color: #F5FDF3;
+                                        border-radius: 1vh;
+                                        color: #007F5F;
+                                        font-size: 1rem;
+                                        margin: 0px 5px;
+                                    }
+                                    #delete{
+                                        background-color: #FCE7E8;
+                                        color: #E63946;
+                                    }
+                                }
+                            }
+                        }
+                        tr:nth-child(even){
+                            background-color: #D3F2FA;
+                        }
+                    }
+                }
+                .js-datatable .datatable-search{
+                        width: 30vw;
+                        height: 5vh;
+                        border: 2px soild #04344D;
+                        outline: none;
+                    }
+                    .datatable-search:focus{
+                        outline: 2px solid #D3F2FA;
+                    }
+            }
+        }
+    }
+}

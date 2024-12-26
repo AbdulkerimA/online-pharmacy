@@ -1,114 +1,125 @@
 <?php
 
 
-class View extends Model {
+class View extends Model
+{
 
-    public function login($luname,$lpass){
+    public function login($luname, $lpass)
+    {
         $dbResult = $this->getUser($luname);
 
-        while($row = $dbResult->fetch_assoc()){
-            if ($luname == $row['user_name'] && $lpass == $row['password']){
+        while ($row = $dbResult->fetch_assoc()) {
+            if ($luname == $row['uname'] && $lpass == $row['password']) {
                 session_start();
                 $_SESSION['user'] = $luname;
                 $_SESSION['islogedin'] = true;
-                $_SESSION['user_type'] = $row['user_type'];
-                $user_type = $row['user_type'];
+                $_SESSION['role'] = $row['role'];
+                $role = $row['role'];
 
-                if($user_type == "admin")
-                {
+                if ($role == "admin") {
                     header("Location:./admin");
-                }
-                else
-                {
-                    header("Location:./product.php");
+                } else {
+                    header("Location:./products.php");
                 }
                 exit;
-            }   
+            }
         }
         $error = "username or password is incorrect";
-        header("Location:./login.php?error=$error");
+        header("Location:./loginandsignup.php?error=$error");
     }
 
 
     // display products for users 
-    public function displayProductForUsers(){
-        
+    public function displayProductForUsers()
+    {
+
         $result = $this->getAllProduct();
         $products = array();
 
-        while ($row = $result->fetch_assoc()){
-            array_push($products,
+        while ($row = $result->fetch_assoc()) {
+            array_push(
+                $products,
                 array(
-                    "pName"=>$row['p_name'],"pdisc"=>$row['p_disc'],
-                    "imgUrl"=>$row['img_url'],"price"=>$row['price'],
-                    "type"=>$row['type']
+                    "name" => $row['pname'],
+                    "amount" => $row['amount'],
+                    "img" => $row['img'],
+                    "price" => $row['price'],
+                    "type" => $row['catagory']
                 )
             );
         }
         return $products;
-    } 
+    }
 
-    public function displaySingleTypeProduct($searchType,$str_){
-        
-        $result = $this->getProductByType($searchType,$str_);
+    public function displaySingleTypeProduct($searchType, $str_)
+    {
+
+        $result = $this->getProductByType($searchType, $str_);
         $products = array();
 
-        while ($row = $result->fetch_assoc()){
-            array_push($products,
+        while ($row = $result->fetch_assoc()) {
+            array_push(
+                $products,
                 array(
-                    "pName"=>$row['p_name'],"pdisc"=>$row['p_disc'],
-                    "imgUrl"=>$row['img_url'],"price"=>$row['price'],
-                    "type"=>$row['type']
+                    "pName" => $row['pname'],
+                    "pdisc" => $row['pdisc'],
+                    "imgUrl" => $row['img'],
+                    "price" => $row['price'],
+                    "type" => $row['catagory']
                 )
             );
         }
         return $products;
-    } 
+    }
 
     // display products in the cart 
-    public function displayProductsOnTheCart($userSession){
-        
+    public function displayProductsOnTheCart($userSession)
+    {
+
         $result = $this->getProductsOnCart($userSession);
         $products = array();
 
-        while ($row = $result->fetch_assoc()){
-            array_push($products,
+        while ($row = $result->fetch_assoc()) {
+            array_push(
+                $products,
                 array(
-                    "pName"=>$row['p_name'],"imgUrl"=>$row['img_url'],
-                    "amount"=>$row['p_amount'],"p"=>$row['price']
+                    "pName" => $row['p_name'],
+                    "imgUrl" => $row['img_url'],
+                    "amount" => $row['p_amount'],
+                    "p" => $row['price']
                 )
             );
         }
         return $products;
-    } 
+    }
 
     // display all users subtotal
-    public function displaySubtotal($userSession){
-        
+    public function displaySubtotal($userSession)
+    {
+
         $result = $this->getSubtotal($userSession);
         $products = array();
 
-        while ($row = $result->fetch_assoc()){
-            array_push($products,array("sub"=>$row['subtotal'],"user"=>$row['uid']));
+        while ($row = $result->fetch_assoc()) {
+            array_push($products, array("sub" => $row['subtotal'], "user" => $row['uid']));
         }
         return $products;
-    } 
+    }
 
     // display all users for admin page 
-    public function displayAllUsers(){
-        $result = $this-> getAllUsers();
+    public function displayAllUsers()
+    {
+        $result = $this->getAllUsers();
         $data = array();
 
-        while ($row = $result->fetch_assoc()){
+        while ($row = $result->fetch_assoc()) {
 
             array_push(
                 $data,
                 array(
-                    "id"=>$row['id'],
-                    "name"=>$row['user_name'],
-                    "email"=>$row['email'],
-                    "tel"=>$row['tel'],
-                    "comment"=>$row['comment'],
+                    "name" => $row['uname'],
+                    "email" => $row['email'],
+                    "tel" => $row['tel'],
                 )
             );
         }
@@ -118,22 +129,25 @@ class View extends Model {
 
 
     // display products in admin page
-    public function displayProductForAdmin(){
-        
+    public function displayProductForAdmin()
+    {
+
         $result = $this->getAllProduct();
         $products = array();
 
-        while ($row = $result->fetch_assoc()){
-            array_push($products,
+        while ($row = $result->fetch_assoc()) {
+            array_push(
+                $products,
                 array(
-                    "pName"=>$row['p_name'],"pdisc"=>$row['p_disc'],
-                    "imgUrl"=>$row['img_url'],"price"=>$row['price'],
-                    "type"=>$row['type'],"pAmount"=>$row['p_amount']
+                    "pName" => $row['p_name'],
+                    "pdisc" => $row['p_disc'],
+                    "imgUrl" => $row['img_url'],
+                    "price" => $row['price'],
+                    "type" => $row['type'],
+                    "pAmount" => $row['p_amount']
                 )
             );
         }
         return $products;
-    } 
-
-
+    }
 }

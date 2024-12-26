@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/style/nav.css">
@@ -11,9 +15,20 @@
             <span><a href="./">Home</a></span>
             <span><a href="./about.php">about us</a></span>
             <span><a href="./products.php">products</a></span>
-            <span id="sub">
-                <a href="./loginandsignup.php"> subscribe </a>
-            </span>
+            <?php if (isset($_SESSION['islogedin']) && $_SESSION['islogedin']): ?>
+                <span id="uname">
+                    <?= $_SESSION['user'] ?>
+                    <a href="./logout.php">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    </a>
+                </span>
+            <?php endif ?>
+            <?php if (!isset($_SESSION['islogedin'])): ?>
+                <span id="sub">
+                    <a href="./loginandsignup.php"> subscribe </a>
+                </span>
+            <?php endif ?>
+
             <span>
                 <a href="./cart.php">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>

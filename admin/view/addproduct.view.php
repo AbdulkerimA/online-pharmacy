@@ -5,34 +5,39 @@
     <!-- <link rel="stylesheet" href="./asset/style/addproperty.css"> -->
 </head>
 <section id="addproduct">
-    <div id="uploadimg">
-        <h2>
-            upload your property image here
-        </h2>
-        <form action="./" method="post">
-            <input type="file" name="" id="">
-        </form>
-    </div>
+
 
     <div id="propertyinfo">
+
         <h2>
             property information
         </h2>
 
-        <form action="./" method="post">
+        <form action="./provider.php" method="post" enctype="multipart/form-data">
+            <div id="uploadimg">
+                <h2>
+                    upload your property image here
+                </h2>
+                <input type="file" name="file" id="imgfile">
+            </div>
+
             <div id="name">
                 <label for="pname">
                     product name
                 </label>
-                <input type="text" name="pname" id="pname">
+                <input required type="text" name="pname" id="pname">
             </div>
             <div id="catagory">
                 <label for="pcatagory">catagory</label>
-                <input type="text" name="pcatagory" id="pcatagory">
+                <input required type="text" name="pcatagory" id="pcatagory">
             </div>
             <div id="price">
                 <label for="price">price</label>
-                <input type="number" name="price" id="price">
+                <input required type="number" name="price" id="price">
+            </div>
+            <div id="amount">
+                <label for="amount">amount of the product</label>
+                <input required type="number" name="amount" id="amount">
             </div>
             <div id="for">
                 <label for="disc">discription</label>

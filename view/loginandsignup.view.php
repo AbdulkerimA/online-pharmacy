@@ -14,6 +14,9 @@
     <div class="container" id="container">
         <div class="form-container sign-up-container">
             <form action="./loginandsignup.php" method="post">
+                <div>
+                    <?= $error ?>
+                </div>
                 <h1>Create Account</h1>
                 <!--<div class="social-container">
                     <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -22,10 +25,10 @@
                 </div>
                 <span>or use your email for registration</span>
                 -->
-                <input type="text" placeholder="Full Name" required />
-                <input type="number" name="phone" id="phonee" placeholder="09" required>
-                <input type="email" placeholder="Email" required />
-                <input type="password" placeholder="Password" required />
+                <input type="text" name="user" placeholder="Full Name" required />
+                <input type="number" name="tel" id="phonee" placeholder="09" required>
+                <input type="email" name="email" placeholder="Email" required />
+                <input type="password" name="pass" placeholder="Password" required />
                 <div id="terms">
                     <input type="checkbox" name="agree" id="agree" required>
                     <label for="agree">i agree to terms and services </label>
@@ -44,8 +47,8 @@
                     </div>
                     <span>or use your account</span> 
                 -->
-                <input type="text" placeholder="user name" required />
-                <input type="password" placeholder="Password" required />
+                <input type="text" name="luname" placeholder="user name" required />
+                <input type="password" name="lpass" placeholder="Password" required />
                 <a href="#">Forgot your password?</a>
                 <button>Sign In</button>
             </form>

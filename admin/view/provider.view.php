@@ -37,9 +37,11 @@
 
             </div>
             <div id="profile">
-                <span>user name</span>
+                <span>
+                    <?= $_SESSION['user'] ?>
+                </span>
             </div>
-            <i class="fa fa-sign-out" aria-hidden="true"></i>
+            <a href="../logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
         </nav>
         <div id="main">
             <?php include_once $currentpage; ?>

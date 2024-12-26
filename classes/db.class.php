@@ -1,18 +1,19 @@
 <?php
 
-class Db {
+class Db
+{
     private $host = "localhost";
     private $user = "root";
     //private $pass="";
-    private $dbName = "butterflydb";
+    private $dbName = "pharmacy";
 
-    protected function conn(){
-        $connection = new mysqli($this->host,$this->user,"",$this->dbName);
-        if ($connection->errno){
+    protected function conn()
+    {
+        $connection = new mysqli($this->host, $this->user, "", $this->dbName);
+        if ($connection->errno) {
             return "connection error";
-        }
-        else{
-          return $connection;
+        } else {
+            return $connection;
         }
     }
 }

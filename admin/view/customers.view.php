@@ -5,44 +5,34 @@
     <table id="myTable" class="display">
         <thead>
             <tr>
-                <th>Column 1</th>
-                <th>Column 2</th>
+                <th>user name</th>
+                <th>email</th>
+                <th>phone number</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Row 1 Data 1</td>
-                <td>Row 1 Data 2</td>
-                <td>
-                    <a href="./edit.php?id=1">
-                        <button>
-                            edit
-                        </button>
-                    </a>
-                    <a href="./delete.php?id=1">
-                        <button id="delete">
-                            delete
-                        </button>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>Row 2 Data 1</td>
-                <td>Row 2 Data 2</td>
-                <td>
-                    <a href="./edit.php?id=1">
-                        <button>
-                            edit
-                        </button>
-                    </a>
-                    <a href="./delete.php?id=1">
-                        <button id="delete">
-                            delete
-                        </button>
-                    </a>
-                </td>
-            </tr>
+            <?php foreach ($users as $user): ?>
+                <tr>
+                    <!-- <td><img src="<?= $product['img'] ?>" alt="img" style="width: 100px; height:100px;"></td> -->
+                    <td><?= $user['name'] ?></td>
+                    <td><?= $user['email'] ?></td>
+                    <td><?= $user['tel'] ?></td>
+                    <td style="width: 25vw;">
+                        <a href="./edit.php?id=1">
+                            <button>
+                                see coments
+                            </button>
+                        </a>
+                        <a href="./delete.php?id=1">
+                            <button id="delete">
+                                ban user
+                            </button>
+                        </a>
+                    </td>
+                </tr>
+            <?php endforeach ?>
+
         </tbody>
     </table>
 </div>

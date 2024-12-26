@@ -11,7 +11,9 @@
             <span><a href="./">Home</a></span>
             <span><a href="./about.php">about us</a></span>
             <span><a href="./products.php">products</a></span>
-            <span id="sub">subscribe</span>
+            <span id="sub">
+                <a href="./loginandsignup.php"> subscribe </a>
+            </span>
             <span>
                 <a href="./cart.php">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>

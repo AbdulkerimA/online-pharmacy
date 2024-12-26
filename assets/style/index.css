@@ -50,13 +50,15 @@ body nav #top #links span i {
 }
 body nav #top #links #sub {
   background-color: #90e0ef;
-  color: #ffffff;
-  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 1vh;
   padding: 1vh 1vw;
+}
+body nav #top #links #sub a {
+  color: #ffffff;
+  font-weight: bold;
 }
 body nav #bottom {
   width: 100%;

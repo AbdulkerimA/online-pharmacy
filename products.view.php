@@ -50,14 +50,27 @@
                             product name
                         </span>
                         <span id="price">250 birr</span>
-                        <button>
+                        <button onclick="addtocart(<?= $i ?>)">
                             add to cart
                         </button>
                     </div>
                 <?php endfor ?>
             </div>
+            <p id="test">test</p>
         </section>
     </main>
 </body>
+<script>
+    function addtocart(id) {
+        alert(id);
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            document.getElementById("test").innerHTML = this.responseText;
+        }
+        xhttp.open("POST", "addtocart.php");
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("pid=" + id);
+    }
+</script>
 
 </html>

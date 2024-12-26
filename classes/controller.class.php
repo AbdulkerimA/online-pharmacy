@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 class Controller extends Model
 {
@@ -29,6 +29,7 @@ class Controller extends Model
                 $queryResult = $this->setUser($Runame, $Rpass, $Remail, $Rtel);
 
                 if ($queryResult == "success") {
+                    session_start();
                     $_SESSION['user'] = $Runame;
                     $_SESSION['islogedin'] = true;
                     header("Location:./products.php");
@@ -42,28 +43,10 @@ class Controller extends Model
 
 
     // add products in the cart 
-    public function addProductinTheCart($pName, $amount, $userSession)
+    public function addProductinTheCart($pid, $uname, $price)
     {
-
-        // get a data 
-        $products = $this->getProduct($pName);
-
-        $data = array();
-        while ($row = $products->fetch_assoc()) {
-            array_push($data, array("img" => $row['img_url'], "price" => $row['price']));
-        }
-
-        $img = $data[0]['img'];
-        $price = $data[0]['price'];
-
-        $queryStr = "insert into cart (p_name,img_url,price,p_amount,userSession) 
-        values ('$pName','$img','$price','$amount','$userSession')";
-
-        if ($this->conn()->query($queryStr)) {
-            return "The product is added successfully";
-        } else {
-            return "the product is not added ";
-        }
+        $result = $this->addToCart($pid, $uname, $price);
+        return $result;
     }
 
     // remove product from cart 

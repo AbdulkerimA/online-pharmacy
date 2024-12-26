@@ -39,9 +39,9 @@ class Model extends Db
 
     // get a specific product
 
-    public function getProduct($pName)
+    public function getProduct($pid)
     {
-        $sqlstmt = "select * from products where p_name = '$pName';";
+        $sqlstmt = "select * from products where pid = '$pid';";
         if ($result = $this->conn()->query($sqlstmt)) {
             return $result;
         } else {
@@ -77,6 +77,17 @@ class Model extends Db
         }
     }
 
+    // add product to cart
+    protected function addToCart($pid, $uname, $price)
+    {
+        $stmt = "INSERT INTO `cart`(`pid`, `uname`, `amount`, `price`)
+         VALUES ('$pid','$uname',1,'$price')";
+        if ($this->conn()->query($stmt)) {
+            return "success";
+        } else {
+            return "error" . $this->conn()->error;
+        }
+    }
 
     // get all product that are in the cart table
     public function getProductsOnCart($userSession)
@@ -209,7 +220,7 @@ class Model extends Db
     // add comment 
     protected function addComent($uid, $cmnt)
     {
-        $sqlstmt = "UPDATE `customers` SET comment ='$cmnt' WHERE user_name='$uid'";
+        $sqlstmt = "INSERT INTO `comments`(`uid`, `comment`) VALUES ('$uid','$cmnt')";
 
         if ($result = $this->conn()->query($sqlstmt)) {
             return $result;

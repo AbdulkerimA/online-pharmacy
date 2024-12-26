@@ -28,6 +28,18 @@ class View extends Model
         header("Location:./loginandsignup.php?error=$error");
     }
 
+    public function getProductById($pid)
+    {
+        $result = $this->getProduct($pid);
+        $data = array();
+
+        $row = $result->fetch_assoc();
+        if ($row != null) {
+            array_push($data, $row['price'], $row['amount']);
+            return $data;
+        }
+        return "not found"; // it's almost imposible
+    }
 
     // display products for users 
     public function displayProductForUsers()
@@ -73,10 +85,10 @@ class View extends Model
     }
 
     // display products in the cart 
-    public function displayProductsOnTheCart($userSession)
+    public function displayProductsOnTheCart($uname)
     {
 
-        $result = $this->getProductsOnCart($userSession);
+        $result = $this->getProductsOnCart($uname);
         $products = array();
 
         while ($row = $result->fetch_assoc()) {
@@ -149,5 +161,10 @@ class View extends Model
             );
         }
         return $products;
+    }
+
+    public function fetchComment()
+    {
+        //
     }
 }

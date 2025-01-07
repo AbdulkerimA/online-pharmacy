@@ -60,6 +60,12 @@ if (isset($_GET['page'])) {
         $users = $viewobj->displayAllUsers();
         $currentpage = './view/customers.view.php';
     } else {
+        $viewobj = new View();
+        $comments = $viewobj->fetchComment();
+        $ppu = $viewobj->displayGeneralStat();
+        $sells = $viewobj->displaySellsStat();
+        $xaxis = array_column($sells, "date");
+        $yaxis = array_column($sells, "amount");
         $currentpage = './view/dashboard.view.php';
     }
 } else {

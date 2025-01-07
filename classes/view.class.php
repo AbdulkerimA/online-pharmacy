@@ -4,6 +4,35 @@
 class View extends Model
 {
 
+    public function displayGeneralStat()
+    {
+        $result = $this->getGeneralStat();
+        $row = $result->fetch_assoc();
+        return [
+            "users" => $row['users'],
+            "payment" => $row['payment'],
+            "products" => $row['products'],
+        ];
+    }
+
+    public function displaySellsStat()
+    {
+        $result =  $this->getSellsStat();
+        $sellsData = array();
+
+        while ($row = $result->fetch_assoc()) {
+            array_push(
+                $sellsData,
+                array(
+                    "amount" => $row['amount'],
+                    "date" => $row['date'],
+                )
+            );
+        }
+        return $sellsData;
+    }
+
+    // 
     public function login($luname, $lpass)
     {
         $dbResult = $this->getUser($luname);
@@ -31,14 +60,17 @@ class View extends Model
     public function getProductById($pid)
     {
         $result = $this->getProduct($pid);
-        $data = array();
 
         $row = $result->fetch_assoc();
-        if ($row != null) {
-            array_push($data, $row['price'], $row['amount']);
-            return $data;
-        }
-        return "not found"; // it's almost imposible
+        return [
+            "pid" => $row['pid'],
+            "img" => $row['img'],
+            "name" => $row['pname'],
+            "price" => $row['price'],
+            "amnt" => $row['amount'],
+            "catagory" => $row['catagory'],
+            "disc" => $row['discription'],
+        ];
     }
 
     // display products for users 
@@ -52,6 +84,7 @@ class View extends Model
             array_push(
                 $products,
                 array(
+                    "pid" => $row['pid'],
                     "name" => $row['pname'],
                     "amount" => $row['amount'],
                     "img" => $row['img'],
@@ -165,6 +198,22 @@ class View extends Model
 
     public function fetchComment()
     {
-        //
+        $comments = $this->getComments();
+        $data = array();
+
+        if ($comments->num_rows > 0) {
+            while ($row = $comments->fetch_assoc()) {
+                array_push(
+                    $data,
+                    array(
+                        "cid" => $row['cid'],
+                        "uid" => $row['uid'],
+                        "comment" => $row['comment'],
+                        "date" => $row['date'],
+                    )
+                );
+            }
+        }
+        return $data;
     }
 }

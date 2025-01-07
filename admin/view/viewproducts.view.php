@@ -20,12 +20,12 @@
                     <td><?= $product['price'] ?></td>
                     <td><?= $product['amount'] ?></td>
                     <td style="width: 25vw;">
-                        <a href="./edit.php?id=1">
+                        <a href="./edit.php?id=<?= $product['pid'] ?>">
                             <button>
                                 edit
                             </button>
                         </a>
-                        <a href="./delete.php?id=1">
+                        <a href="./delete.php?id=<?= $product['pid'] ?>">
                             <button id="delete">
                                 delete
                             </button>

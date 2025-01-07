@@ -2,7 +2,7 @@
     <div id="info">
         <div id="total">
             <span>
-                $<?= '2000' ?>
+                $<?= $ppu['payment'] ?>
             </span>
             <span>
                 earned
@@ -10,7 +10,7 @@
         </div>
         <div id="pnum">
             <span>
-                <?= 40 ?>
+                <?= $ppu['products']  ?>
             </span>
             <span>
                 aveliable products
@@ -18,7 +18,7 @@
         </div>
         <div id="sub">
             <span>
-                <?= 1000 ?>
+                <?= $ppu['users']  ?>
             </span>
             <span>
                 subscribers
@@ -35,19 +35,19 @@
         <table id="myTable" class="display">
             <thead>
                 <tr>
-                    <th>Column 1</th>
-                    <th>Column 2</th>
+                    <th>comment date</th>
+                    <th>email</th>
+                    <th>comment</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Row 1 Data 1</td>
-                    <td>Row 1 Data 2</td>
-                </tr>
-                <tr>
-                    <td>Row 2 Data 1</td>
-                    <td>Row 2 Data 2</td>
-                </tr>
+                <?php foreach ($comments as $comment): ?>
+                    <tr>
+                        <td><?= $comment['date'] ?></td>
+                        <td><?= $comment['uid'] ?></td>
+                        <td><?= $comment['comment'] ?></td>
+                    </tr>
+                <?php endforeach ?>
             </tbody>
         </table>
     </div>
@@ -57,9 +57,11 @@
 </script>
 
 <script>
-    var xValues = ["monday", "tuesday", "wednesday", "thiersday", "friday", "saterday", "sunday"]; // most sold products
-    var yValues = [55, 49, 44, 24, 15, 30, 50, 70]; // valus
-    var barColors = ["red", "green", "blue", "orange", "brown", "yellow"]; // 
+    // console.log(<?= json_encode($xaxis) ?>);
+    // console.log(<?= json_encode($yaxis) ?>);
+    var xValues = <?php echo json_encode($xaxis) ?>; // most sold products
+    var yValues = <?php echo json_encode($yaxis) ?>; // valus
+    var barColors = ["#2ECC71", "#E67E22", "#9B59B6", "#1ABC9C", "#2C3E50"]; // 
 
     new Chart("myChart", {
         type: "bar",

@@ -1,10 +1,3 @@
-<?php
-
-// display the recored to be edited 
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,47 +5,46 @@
     <link rel="stylesheet" href="./asset/style/edit.css">
 </head>
 <section id="editproperty">
+    <h2>
+        edit your property image
+    </h2>
     <div id="img">
-        <h2>
-            edit your property image
-        </h2>
-        <img src="../asset/pics/alexander-andrews-A3DPhhAL6Zg-unsplash.jpg" alt="property image">
-        <form action="./" method="post">
-            <input type="file" name="" id="">
-        </form>
+        <img src="<?= $product['img'] ?>" alt="property image">
     </div>
 
     <div id="propertyinfo">
         <h2>
             property information
         </h2>
-
-        <form action="./" method="post">
+        <form action="./edit.php" method="post" enctype="multipart/form-data">
+            <div id="productimg">
+                <label for="file">update product img</label>
+                <input type="file" name="file" id="file">
+            </div>
+            <input type="hidden" name="pid" value="<?= $product['pid'] ?>">
             <div id="name">
                 <label for="pname">
-                    property name
+                    product name
                 </label>
-                <input type="text" name="pname" id="pname">
+                <input type="text" name="pname" id="pname" placeholder="<?= $product['name'] ?>">
             </div>
             <div id="catagory">
                 <label for="pcatagory">catagory</label>
-                <input type="text" name="pcatagory" id="pcatagory">
+                <input type="text" name="pcatagory" id="pcatagory" placeholder="<?= $product['catagory'] ?>">
             </div>
             <div id="price">
                 <label for="price">price</label>
-                <input type="number" name="price" id="price">
+                <input type="number" name="price" id="price" placeholder="<?= $product['price'] ?>">
             </div>
-            <div id="for">
-                <label for="pfor">property for</label>
-                <input type="text" name="pfor" id="pfor" placeholder="rent">
+            <div id="amount">
+                <label for="amnt">product amount</label>
+                <input type="number" name="amnt" id="amnt" placeholder="<?= $product['amnt'] ?>">
             </div>
-            <div id="squerfoot">
-                <label for="squearfoot">squear foot</label>
-                <input type="number" name="squearfoot" id="squearfoot">
-            </div>
-            <div id="location">
-                <label for="location">property location</label>
-                <input type="text" name="location" id="location" placeholder="Enter properties location">
+            <div id="disc">
+                <label for="disc">property location</label>
+                <textarea name="disc" id="disc">
+                    <?= $product['disc'] ?>
+                </textarea>
             </div>
 
             <button type="submit">submit</button>

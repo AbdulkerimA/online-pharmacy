@@ -19,14 +19,9 @@
                     <td><?= $user['email'] ?></td>
                     <td><?= $user['tel'] ?></td>
                     <td style="width: 25vw;">
-                        <a href="./edit.php?id=1">
-                            <button>
-                                see coments
-                            </button>
-                        </a>
-                        <a href="./delete.php?id=1">
+                        <a href="./delete.php?uid=<?= $user['name'] ?>">
                             <button id="delete">
-                                ban user
+                                delete user
                             </button>
                         </a>
                     </td>

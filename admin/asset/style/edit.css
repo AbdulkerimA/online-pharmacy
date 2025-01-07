@@ -1,0 +1,105 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*add products page*/
+}
+body #editproperty {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /*overflow-y: scroll;
+  scrollbar-width: none;*/
+}
+body #editproperty h2 {
+  font-size: 1.3rem;
+  font-family: sans-serif;
+  color: #04344D;
+}
+body #editproperty #img {
+  width: 80%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 5px dashed #04344D;
+  margin: 2vh 2vw;
+  background-color: #fff;
+}
+body #editproperty #img img {
+  width: 100%;
+  height: 50vh;
+}
+body #editproperty #img form input {
+  width: 100%;
+  height: 100%;
+}
+body #editproperty #propertyinfo {
+  width: 80%;
+  background-color: #fff;
+  border-radius: 1vh;
+  padding: 1vh 2vw;
+}
+body #editproperty #propertyinfo h2 {
+  font-size: 1.3rem;
+  font-family: sans-serif;
+  color: #04344D;
+  margin-bottom: 1vh;
+}
+body #editproperty #propertyinfo form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+body #editproperty #propertyinfo form div {
+  margin: 1vh 1vw;
+  display: flex;
+  flex-direction: column;
+}
+body #editproperty #propertyinfo form div label {
+  font-size: 0.9rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #04344D;
+  margin: 5px 0px;
+}
+body #editproperty #propertyinfo form div input {
+  padding: 1vh;
+  font-size: 0.9rem;
+  border-radius: 1vh;
+  border: 1px solid #04344D;
+}
+body #editproperty #propertyinfo form div #pname {
+  width: 25vw;
+}
+body #editproperty #propertyinfo form div #pcatagory {
+  width: 25vw;
+}
+body #editproperty #propertyinfo form div textarea {
+  min-width: 50vw;
+  max-width: 50vw;
+  min-height: 10vw;
+  border-radius: 1vh;
+  outline: none;
+  border: 1px solid #04344D;
+}
+body #editproperty #propertyinfo form button {
+  width: 15vw;
+  margin: 5px 2vw;
+  padding: 2vh 2vw;
+  font-size: 1rem;
+  color: #04344D;
+  border: 1px solid #04344D;
+  border-radius: 1vh;
+  background-color: #fff;
+}
+body #editproperty #propertyinfo form button:hover {
+  transform: scale(0.98);
+}/*# sourceMappingURL=edit.css.map */

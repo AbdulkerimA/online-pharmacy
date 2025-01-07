@@ -2,6 +2,31 @@
 
 class Model extends Db
 {
+
+    // statstics functions 
+    protected function getGeneralStat()
+    {
+        $stmt = "SELECT (SELECT SUM(amount) FROM `payment`) as payment,
+         (SELECT COUNT(*) FROM `products`) AS products,
+         (SELECT COUNT(*) FROM `users`) AS users;";
+
+        if ($result = $this->conn()->query($stmt)) {
+            return $result;
+        } else {
+            return "query error" . $this->conn()->error;
+        }
+    }
+
+    protected function getSellsStat()
+    {
+        $stmt = "SELECT COUNT(`pid`) AS `amount`, `date` FROM `payment` GROUP BY `date`";
+        if ($result = $this->conn()->query($stmt)) {
+            return $result;
+        } else {
+            return "query error" . $this->conn()->error;
+        }
+    }
+
     // get all users 
     public function getAllUsers()
     {
@@ -74,6 +99,29 @@ class Model extends Db
             return $result;
         } else {
             return "query error" . $this->conn()->error;
+        }
+    }
+
+    // update the product table
+    protected function updateProduct($pid, $pname, $price, $amnt, $catagory, $disc)
+    {
+        $stmt = "UPDATE `products` SET /*`img`='[value-2]',*/`pname`='$pname',`catagory`='$catagory'
+        ,`price`='$price',`amount`='$amnt',`discription`='$disc' WHERE `pid` = '$pid' ";
+        if ($this->conn()->query($stmt)) {
+            return "success";
+        } else {
+            return "query error";
+        }
+    }
+
+    // delete product by id
+    protected function deleteProduct($pid)
+    {
+        $stmt = "delete from products where pid = '$pid'";
+        if ($this->conn()->query($stmt)) {
+            return "success";
+        } else {
+            return "query error";
         }
     }
 
@@ -175,18 +223,6 @@ class Model extends Db
     }
 
     //Admin 
-    // delete product
-
-    public function removeProduct($pName)
-    {
-        $sqlstmt = "delete from products where p_name = '$pName'";
-
-        if ($result = $this->conn()->query($sqlstmt)) {
-            return "successfully removed";
-        } else {
-            return "query problem";
-        }
-    }
 
     // update price of product 
     public function priceUpdate($pName, $price)
@@ -217,12 +253,32 @@ class Model extends Db
         }
     }
 
+    // deleet user from usres table
+    protected function removeUser($uid)
+    {
+        $stmt = "DELETE FROM `users` WHERE `uname` = '$uid'";
+        if ($this->conn()->multi_query($stmt)) {
+            return "success";
+        } else {
+            return "query error";
+        }
+    }
+
     // add comment 
     protected function addComent($uid, $cmnt)
     {
         $sqlstmt = "INSERT INTO `comments`(`uid`, `comment`) VALUES ('$uid','$cmnt')";
 
         if ($result = $this->conn()->query($sqlstmt)) {
+            return $result;
+        } else {
+            return "Query Error " . $this->conn()->error;
+        }
+    }
+    protected function getComments()
+    {
+        $stmt = "SELECT * FROM `comments`";
+        if ($result = $this->conn()->query($stmt)) {
             return $result;
         } else {
             return "Query Error " . $this->conn()->error;

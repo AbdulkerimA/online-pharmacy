@@ -32,6 +32,7 @@ class Controller extends Model
                     session_start();
                     $_SESSION['user'] = $Runame;
                     $_SESSION['islogedin'] = true;
+                    $_SESSION['role'] = 'user';
                     header("Location:./products.php");
                     exit;
                 } else {
@@ -41,6 +42,17 @@ class Controller extends Model
         }
     }
 
+    // delete user 
+    public function deleteUser($uid)
+    {
+        return $this->removeUser($uid);
+    }
+
+    // update product
+    public function updateProductTable($pid, $pname, $price, $amnt, $catagory, $disc)
+    {
+        return $this->updateProduct($pid, $pname, $price, $amnt, $catagory, $disc);
+    }
 
     // add products in the cart 
     public function addProductinTheCart($pid, $uname, $price)
@@ -125,15 +137,9 @@ class Controller extends Model
     }
 
     // delete product from the db 
-    public function DeleteProduct($pName)
+    public function removeProduct($pid)
     {
-        $result = $this->removeProduct($pName);
-
-        if ($result == "successfully removed") {
-            return $result;
-        } else {
-            return $result;
-        }
+        return $this->deleteProduct($pid);
     }
 
     // update price 

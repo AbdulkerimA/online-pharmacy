@@ -1,37 +1,13 @@
 <?php
+include "./inc/includes.inc.php";
+require_once("./nav.php");
 
-$productsOnCart = [
-    [
-        "pic" => "./assets/pics/face_wash_cleansers.png",
-        "proName" => "name",
-        "pricePerUnit" => 250,
-        "productAmountAddedonTheCart" => 1
-    ],
-    [
-        "pic" => "./assets/pics/face_wash_cleansers.png",
-        "proName" => "name",
-        "pricePerUnit" => 250,
-        "productAmountAddedonTheCart" => 1
-    ],
-    [
-        "pic" => "./assets/pics/face_wash_cleansers.png",
-        "proName" => "name",
-        "pricePerUnit" => 250,
-        "productAmountAddedonTheCart" => 1
-    ],
-    [
-        "pic" => "./assets/pics/face_wash_cleansers.png",
-        "proName" => "name",
-        "pricePerUnit" => 250,
-        "productAmountAddedonTheCart" => 1
-    ],
-    [
-        "pic" => "./assets/pics/face_wash_cleansers.png",
-        "proName" => "name",
-        "pricePerUnit" => 250,
-        "productAmountAddedonTheCart" => 1
-    ],
-];
+
+$_SESSION['tid'] = "tx-" . uniqid();
+
+$viewovj = new View();
+$productsOnCart =  $viewovj->displayProductsOnTheCart($_SESSION['user']);
+
 
 $amountOfProducts = count($productsOnCart);
 $isProductsOnCartEmpty = $amountOfProducts == 0 ? true : false;
@@ -39,10 +15,10 @@ $totalPrice = 0;
 
 if (!$isProductsOnCartEmpty) {
     foreach ($productsOnCart as $p) {
-        $totalPrice = $totalPrice + $p["pricePerUnit"] * $p["productAmountAddedonTheCart"];
+        $totalPrice = $totalPrice + $p["price"] * $p["amnt"];
     }
 }
-require_once("./nav.php");
+
 //include the view 
 require_once("./view/cart.view.php");
 

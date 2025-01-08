@@ -12,7 +12,7 @@
     <main id="cartmain">
         <section id="cart">
             <header>
-                <h2>
+                <h2 id="test">
                     my cart
                 </h2>
                 <h3>
@@ -25,24 +25,24 @@
                     <div id="itemscont">
                         <?php foreach ($productsOnCart as $product): ?>
                             <div id="itemoncart">
-                                <img src="<?= $product["pic"] ?>" alt="product">
+                                <img src="<?= $product["img"] ?>" alt="product">
                                 <span id="info">
-                                    product name <?= $product["proName"] ?>
+                                    product name <?= $product["pname"] ?>
                                     <br>
-                                    price per unit <?= $product["pricePerUnit"] ?> birr
+                                    price per unit <?= $product["price"] ?> birr
                                 </span>
                                 <div id="amount">
-                                    <span id="add">
+                                    <span id="add" onclick="increaseamnt(<?= $product['pid'] ?>,<?= $product['amnt'] ?>,<?= $product['amntinStore'] ?>)">
                                         <i class="fa fa-plus" aria-hidden="true"></i>
                                     </span>
                                     <span id="value">
-                                        <?= $product["productAmountAddedonTheCart"] ?>
+                                        <?= $product["amnt"] ?>
                                     </span>
-                                    <span id="decreas">
+                                    <span id="decreas" onclick="decreaseamnt(<?= $product['pid'] ?>,<?= $product['amnt'] ?>)">
                                         <i class="fa fa-minus" aria-hidden="true"></i>
                                     </span>
                                 </div>
-                                <span id="cancel">
+                                <span id="cancel" onclick="deleteProduct(<?= $product['pid'] ?>)">
                                     <i class="fa fa-trash-o" aria-hidden="true"></i>
                                 </span>
                             </div>
@@ -53,18 +53,18 @@
                             total: <?= $totalPrice ?> birr
                         </span>
                         <form method="POST" action="https://api.chapa.co/v1/hosted/pay">
-                            <input type="hidden" name="public_key" value="YOUR_PUBLIC_API_KEY" />
-                            <input type="hidden" name="tx_ref" value="negade-tx-12345678sss9" />
+                            <input type="hidden" name="public_key" value="CHAPUBK_TEST-203dmVryRF7hFIVGxCXLggy8Wq5VuFmv" />
+                            <input type="hidden" name="tx_ref" value="<?= $_SESSION['tid'] ?>" />
                             <input type="hidden" name="amount" value="<?= $totalPrice ?>" />
                             <input type="hidden" name="currency" value="ETB" />
-                            <input type="hidden" name="email" value="israel@negade.et" />
-                            <input type="hidden" name="first_name" value="Israel" />
+                            <input type="hidden" name="email" value="degualemayehu7@gmail.com" />
+                            <input type="hidden" name="first_name" value="someone" />
                             <input type="hidden" name="last_name" value="Goytom" />
                             <input type="hidden" name="title" value="Let us do this" />
                             <input type="hidden" name="description" value="Paying with Confidence with cha" />
                             <input type="hidden" name="logo" value="https://chapa.link/asset/images/chapa_swirl.svg" />
-                            <input type="hidden" name="callback_url" value="https://example.com/callbackurl" />
-                            <input type="hidden" name="return_url" value="https://example.com/returnurl" />
+                            <input type="hidden" name="callback_url" value="" />
+                            <input type="hidden" name="return_url" value="http://localhost/online-pharmacy/payment.php?status=success" />
                             <input type="hidden" name="meta[title]" value="test" />
                             <button>
                                 checkout
@@ -93,6 +93,73 @@
 </body>
 <script>
     /*document.getElementById("cartmain").style.height = window.innerHeight - 150;*/
+    function decreaseamnt(id, amnt) {
+        // alert(` function s ${id} ${amnt}`);
+
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            // document.getElementById("test").innerHTML = this.responseText;
+            // alert(this.responseText);
+            location.reload();
+        }
+        amnt--;
+        var data = {
+            pid: id,
+            amnt: amnt
+        };
+
+        if (amnt >= 1) {
+            // Convert the data object to a JSON string
+            var jsonData = JSON.stringify(data);
+            xhttp.open("PUT", "chartupdate.php");
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send(jsonData);
+        }
+    }
+
+    function increaseamnt(id, amnt, amntinStore) {
+        // alert(` function s ${id} ${amnt} ${amntinStore}`);
+
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            // document.getElementById("test").innerHTML = this.responseText;
+            // alert(this.responseText);
+            location.reload();
+        }
+        if (amnt < amntinStore) {
+            amnt++;
+        }
+        var data = {
+            pid: id,
+            amnt: amnt
+        };
+
+        // Convert the data object to a JSON string
+        var jsonData = JSON.stringify(data);
+        xhttp.open("PUT", "chartupdate.php");
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(jsonData);
+    }
+
+    function deleteProduct(id) {
+        // alert(` function s ${id}`);
+
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            // document.getElementById("test").innerHTML = this.responseText;
+            alert(this.responseText);
+            location.reload();
+        }
+        var data = {
+            pid: id,
+        };
+
+        // Convert the data object to a JSON string
+        var jsonData = JSON.stringify(data);
+        xhttp.open("DELETE", "chartupdate.php");
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(jsonData);
+    }
 </script>
 
 </html>

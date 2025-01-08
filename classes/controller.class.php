@@ -74,9 +74,9 @@ class Controller extends Model
     }
 
     // change amount of a product in the cart table
-    public function changeAmountOnCart($uid, $cartPName, $newAmount)
+    public function changeAmountOnCart($uid, $pid, $newAmount)
     {
-        $result = $this->productAmountUpdate($uid, $cartPName, $newAmount);
+        $result = $this->productAmountUpdate($uid, $pid, $newAmount);
         if ($result == "query error") {
             return "error";
         } else {
@@ -100,9 +100,9 @@ class Controller extends Model
 
 
     // remove p from cart 
-    public function removeAllProductsFromCart($uid)
+    public function removeAllProductsFromCart($uid, $pid)
     {
-        $result = $this->deleteAllFromCart($uid);
+        $result = $this->deleteFromCart($uid, $pid);
         return $result;
     }
 
@@ -151,5 +151,10 @@ class Controller extends Model
         } else {
             return $result;
         }
+    }
+
+    public function setPayment($uname, $tid, $pid, $amnt)
+    {
+        return $this->addPayment($uname, $tid, $pid, $amnt);
     }
 }

@@ -86,10 +86,12 @@ class View extends Model
                 array(
                     "pid" => $row['pid'],
                     "name" => $row['pname'],
-                    "amount" => $row['amount'],
+                    "amnt" => $row['amount'],
                     "img" => $row['img'],
                     "price" => $row['price'],
-                    "type" => $row['catagory']
+                    "type" => $row['catagory'],
+                    "disc" => $row['discription'],
+
                 )
             );
         }
@@ -125,13 +127,17 @@ class View extends Model
         $products = array();
 
         while ($row = $result->fetch_assoc()) {
+            $product = $this->getProductById($row['pid']);
             array_push(
                 $products,
                 array(
-                    "pName" => $row['p_name'],
-                    "imgUrl" => $row['img_url'],
-                    "amount" => $row['p_amount'],
-                    "p" => $row['price']
+                    "img" => $product['img'],
+                    "pname" => $product['name'],
+                    "amntinStore" => $product['amnt'],
+                    "pid" => $row['pid'],
+                    "uname" => $row['uname'],
+                    "amnt" => $row['amount'],
+                    "price" => $row['price'],
                 )
             );
         }

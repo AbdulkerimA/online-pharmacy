@@ -140,7 +140,7 @@ class Model extends Db
     // get all product that are in the cart table
     public function getProductsOnCart($userSession)
     {
-        $sqlstmt = "select * from Cart where userSession = '$userSession';";
+        $sqlstmt = "SELECT * FROM `cart` WHERE uname = '$userSession';";
         if ($result = $this->conn()->query($sqlstmt)) {
             return $result;
         } else {
@@ -161,9 +161,9 @@ class Model extends Db
     }
 
     // update amount of a product in cart 
-    public function productAmountUpdate($uid, $pName, $newAmount)
+    public function productAmountUpdate($uname, $pid, $newAmount)
     {
-        $sqlstmt = "UPDATE cart SET p_amount = '$newAmount' WHERE p_name = '$pName' and userSession='$uid'";
+        $sqlstmt = "UPDATE cart SET amount = '$newAmount' WHERE pid = '$pid' and uname='$uname'";
 
         if ($result = $this->conn()->query($sqlstmt)) {
             return $newAmount;
@@ -208,17 +208,14 @@ class Model extends Db
     }
 
     // delete all p from car for this user
-    protected function deleteAllFromCart($uid)
+    protected function deleteFromCart($uid, $pid)
     {
-        $sqlstmt = "delete from cart where userSession='$uid';
-                    delete from subtotal where uid='$uid';
-                    update customers set number_item_they_buy = number_item_they_buy+1 where user_name='$uid';
-                ";
+        $sqlstmt = "DELETE FROM `cart` WHERE `pid` = '$pid' AND `uname` = '$uid'";
 
-        if ($result = $this->conn()->multi_query($sqlstmt)) {
-            return "removed";
+        if ($this->conn()->query($sqlstmt)) {
+            return "removed successfuly";
         } else {
-            return "query error";
+            return "query error " . $this->conn()->error;
         }
     }
 
@@ -280,6 +277,17 @@ class Model extends Db
         $stmt = "SELECT * FROM `comments`";
         if ($result = $this->conn()->query($stmt)) {
             return $result;
+        } else {
+            return "Query Error " . $this->conn()->error;
+        }
+    }
+
+    protected function addPayment($uname, $tid, $pid, $amount)
+    {
+        $stmt = "INSERT INTO `payment`(`tid`, `uname`, `pid`, `amount`) 
+        VALUES ('$tid','$uname','$pid','$amount')";
+        if ($this->conn()->query($stmt)) {
+            return "success";
         } else {
             return "Query Error " . $this->conn()->error;
         }

@@ -21,6 +21,7 @@ body main {
 }
 body main #cart {
   width: 80%;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
 }
@@ -47,6 +48,7 @@ body main #cart #thecart {
 body main #cart #thecart #itemscont {
   width: 95%;
   height: 70%;
+  margin-bottom: 1vh;
   overflow-y: scroll;
   scrollbar-width: none;
   overflow-x: hidden;
@@ -96,6 +98,7 @@ body main #cart #thecart #itemscont #itemoncart #cancel:hover {
   transform: scale(0.98);
 }
 body main #cart #thecart #checkout {
+  margin-top: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

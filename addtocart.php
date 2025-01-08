@@ -9,13 +9,18 @@ if (!isset($_SESSION['islogedin'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $uname = $_SESSION['user'];
-    $pid = $_POST['pid'];
+    $jsonData = file_get_contents('php://input');
+    $data = json_decode($jsonData, true);
 
+    $uname = $_SESSION['user'];
+    $pid = $data['pid'];
+    $amnt = $data['amnt'];
+
+    // var_dump($_POST);
     $viewObj = new View();
     $data = $viewObj->getProductById($pid);
 
-    $price = $data[0];
+    $price = $data['price'];
 
     // var_dump($data);
     // echo "$" . $data[0] . " " . $data[1];

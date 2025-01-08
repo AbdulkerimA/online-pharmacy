@@ -18,6 +18,7 @@ body{
         justify-content: center;
         #cart{
             width: 80%;
+            min-height: 60vh;
             display: flex;
             flex-direction: column;
             header{
@@ -33,6 +34,8 @@ body{
                 }
             }
             #thecart{
+                // margin: 2vh 0px;
+                // background-color: palevioletred;
                 width: 95%;
                 height: 95%;
                 display: flex;
@@ -42,6 +45,8 @@ body{
                 #itemscont{
                     width: 95%;
                     height: 70%;
+                    // background-color: rebeccapurple;
+                    margin-bottom: 1vh;
                     overflow-y: scroll;
                     scrollbar-width: none;
                     overflow-x: hidden;
@@ -95,6 +100,8 @@ body{
                     }
                 }
                 #checkout{
+                    margin-top: 100vh;
+                    // background-color: yellow;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;

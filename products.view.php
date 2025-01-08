@@ -43,33 +43,40 @@
                 <?php endfor ?>
             </div>
             <div id="productscont">
-                <?php for ($i = 0; $i < 16; $i++): ?>
+                <?php foreach ($products as $product): ?>
                     <div id="product">
-                        <img src="./assets/pics/face_wash_cleansers.png" alt="product">
+                        <img src="<?= $product['img'] ?>" alt="product">
                         <span id="pname">
-                            product name
+                            <?= $product['name'] ?>
                         </span>
-                        <span id="price">250 birr</span>
-                        <button onclick="addtocart(<?= $i ?>)">
+                        <span id="price"><?= $product['price'] ?> ETB</span>
+                        <button onclick="addtocart(<?= $product['pid'] ?>,<?= $product['amnt'] ?>)">
                             add to cart
                         </button>
                     </div>
-                <?php endfor ?>
+                <?php endforeach ?>
             </div>
             <p id="test">test</p>
         </section>
     </main>
 </body>
 <script>
-    function addtocart(id) {
+    function addtocart(id, amnt) {
         alert(id);
         const xhttp = new XMLHttpRequest();
         xhttp.onload = function() {
             document.getElementById("test").innerHTML = this.responseText;
         }
+        var data = {
+            pid: id,
+            amnt: amnt
+        };
+
+        // Convert the data object to a JSON string
+        var jsonData = JSON.stringify(data);
         xhttp.open("POST", "addtocart.php");
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("pid=" + id);
+        xhttp.send(jsonData);
     }
 </script>
 

@@ -53,7 +53,7 @@
                             total: <?= $totalPrice ?> birr
                         </span>
                         <form method="POST" action="https://api.chapa.co/v1/hosted/pay">
-                            <input type="hidden" name="public_key" value="CHAPUBK_TEST-203dmVryRF7hFIVGxCXLggy8Wq5VuFmv" />
+                            <input type="hidden" name="public_key" value="CHAPUBK_TEST-3USL2taXMjXSLtG9VdZ3Qv7zaZTUtxfL" />
                             <input type="hidden" name="tx_ref" value="<?= $_SESSION['tid'] ?>" />
                             <input type="hidden" name="amount" value="<?= $totalPrice ?>" />
                             <input type="hidden" name="currency" value="ETB" />

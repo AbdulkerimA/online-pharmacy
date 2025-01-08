@@ -32,7 +32,7 @@
             </div>
 
             <div id="cta">
-                <a href="./">
+                <a href="./products.php">
                     <button>
                         shop now
                     </button>
@@ -83,10 +83,10 @@
                 <h4>
                     today's best deal
                 </h4>
-                <span><i><a href="./">view all ></a></i></span>
+                <span><i><a href="./products.php">view all ></a></i></span>
             </div>
             <div id="products">
-                <?php for ($i = 0; $i < 16; $i++): ?>
+                <?php for ($i = 0; $i < 4; $i++): ?>
                     <div id="product">
                         <img src="./assets/pics/face_wash_cleansers.png" alt="product">
                         <span id="pname">
@@ -115,9 +115,11 @@
                     <br>
                     get medicen refill every month
                 </p>
-                <button id="sub">
-                    Register now
-                </button>
+                <a href="./loginandsignup.php">
+                    <button id="sub">
+                        Register now
+                    </button>
+                </a>
             </div>
             <div id="familypic">
                 <img src="./assets/pics/PlusFamily.png" alt="become a member">
@@ -194,9 +196,11 @@
                     <br>
                     get medicen refill every month
                 </p>
-                <button id="sub">
-                    Register now
-                </button>
+                <a href="./loginandsignup.php">
+                    <button id="sub">
+                        Register now
+                    </button>
+                </a>
             </div>
             <div id="familypic">
                 <img src="./assets/pics/PlusFamily.png" alt="become a member">

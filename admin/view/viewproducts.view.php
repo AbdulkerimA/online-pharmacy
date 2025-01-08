@@ -17,8 +17,8 @@
                 <tr>
                     <td><img src="<?= $product['img'] ?>" alt="img" style="width: 100px; height:100px;"></td>
                     <td><?= $product['name'] ?></td>
-                    <td><?= $product['price'] ?></td>
-                    <td><?= $product['amount'] ?></td>
+                    <td><?= $product['price'] ?> ETB</td>
+                    <td><?= $product['amnt'] ?></td>
                     <td style="width: 25vw;">
                         <a href="./edit.php?id=<?= $product['pid'] ?>">
                             <button>

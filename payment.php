@@ -1,5 +1,5 @@
 <?php
-
+require "./inc/includes.inc.php";
 session_start();
 
 echo $_SESSION['user'];
@@ -20,14 +20,16 @@ if ($_GET['status'] == 'success') {
     foreach ($products as $product) {
         $result = $contobj->setPayment($_SESSION['user'], $_SESSION['tid'], $product['pid'], $product['amnt']);
         if ($result == 'success') {
-            $contobj->DeleteProductFromCart($_SESSION['user'], $product['pid']);
+            $contobj->removeAllProductsFromCart($_SESSION['user'], $product['pid']);
         } else {
             echo $result;
             exit;
         }
     }
+    echo "<script>alert(1)</script>";
 } else {
     header("Location:./cart.php?error=transaction fails");
 }
 
 header("Location:./products.php");
+// echo $result;

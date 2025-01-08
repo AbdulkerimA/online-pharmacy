@@ -28,7 +28,7 @@
 
     <div id="chart">
 
-        <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+        <canvas id="myChart" style="width:100%;max-width:800px;"></canvas>
 
     </div>
     <div id="users">
@@ -57,8 +57,8 @@
 </script>
 
 <script>
-    // console.log(<?= json_encode($xaxis) ?>);
-    // console.log(<?= json_encode($yaxis) ?>);
+    console.log(<?= json_encode($xaxis) ?>);
+    console.log(<?= json_encode($yaxis) ?>);
     var xValues = <?php echo json_encode($xaxis) ?>; // most sold products
     var yValues = <?php echo json_encode($yaxis) ?>; // valus
     var barColors = ["#2ECC71", "#E67E22", "#9B59B6", "#1ABC9C", "#2C3E50"]; // 

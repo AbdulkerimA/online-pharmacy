@@ -131,16 +131,21 @@ body{
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        i{
+                        button{
                             height: 100%;
-                            padding: 0px 1vw;
-                            border:none;
-                            border-radius: 0px 1vh 1vh 0px;
-                            background-color: transparent;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            color: #0096c7;
+                            background: transparent;
+                            border: none;
+                            i{
+                                height: 100%;
+                                padding: 0px 1vw;
+                                border:none;
+                                border-radius: 0px 1vh 1vh 0px;
+                                background-color: transparent;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                color: #0096c7;
+                            }
                         }
                     }
                 }

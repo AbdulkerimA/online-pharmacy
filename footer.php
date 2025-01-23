@@ -7,9 +7,15 @@
          <div id="left">
              <h3>Navigation</h3>
              <ul>
-                 <li>home</li>
-                 <li>about us</li>
-                 <li>products</li>
+                 <a href="./index.php">
+                     <li>home</li>
+                 </a>
+                 <a href="./about.php">
+                     <li>about us</li>
+                 </a>
+                 <a href="./products.php">
+                     <li>products</li>
+                 </a>
              </ul>
          </div>
          <?php if ($_SERVER['PHP_SELF'] != '/online-pharmacy/loginandsignup.php') { ?>

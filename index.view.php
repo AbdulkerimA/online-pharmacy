@@ -23,10 +23,12 @@
             </div>
 
             <div id="search">
-                <form action="./index.php" method="get">
-                    <input type="text" name="search" id="searchinp" placeholder="what are you looking for">
+                <form action="./products.php" method="get">
+                    <input type="text" name="search" id="searchinp" required placeholder="what are you looking for">
                     <label for="search">
-                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <button type="submit">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
                     </label>
                 </form>
             </div>

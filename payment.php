@@ -26,7 +26,6 @@ if ($_GET['status'] == 'success') {
             exit;
         }
     }
-    echo "<script>alert(1)</script>";
 } else {
     header("Location:./cart.php?error=transaction fails");
 }

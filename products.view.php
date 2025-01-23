@@ -21,24 +21,23 @@
         <section id="products">
             <div id="filterby">
                 <?php for ($i = 0; $i < 5; $i++): ?>
-                    <div class="cont ">
-                        <div id="header">
+                    <div id="cont" class="cont">
+                        <div id="header" onclick="makeActive()">
                             <span id="text">
                                 catagory
                             </span>
-                            <span id="icon">
+                            <div id="icon">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
-                                <!--<i class="fa fa-minus" aria-hidden="true"></i>-->
-                            </span>
+                            </div>
                         </div>
                         <?php for ($j = 0; $j < 3; $j++): ?>
-                            <div id="options">
-                                <div id="option">
-                                    <input type="checkbox" name="personalcare" id="pcare">
-                                    <label for="prsonalcare">personal care</label>
+                            <div id="options" class="options-<?php echo $j; ?>">
+                                <div id="option" class="option-<?php echo $j; ?>">
+                                    <input type="checkbox" name="personalcare-<?php echo $j; ?>" id="pcare" class="pcare-<?php echo $j; ?>">
+                                    <label for="pcare-<?php echo $j; ?>">Personal Care</label>
                                 </div>
                             </div>
-                        <?php endfor ?>
+                        <?php endfor; ?>
                     </div>
                 <?php endfor ?>
             </div>
@@ -61,6 +60,28 @@
     </main>
 </body>
 <script>
+    document.querySelectorAll(".options").forEach((optionsDiv) => {
+        optionsDiv.addEventListener("click", () => {
+            const checkbox = optionsDiv.querySelector("input[type='checkbox']");
+            if (checkbox) {
+                checkbox.checked = !checkbox.checked;
+            }
+        });
+    });
+
+    function makeActive() {
+        let optionsIcon = document.getElementById("icon");
+        let option = document.getElementById("cont");
+        if (option.classList.contains("active")) {
+            option.classList.remove("active");
+            optionsIcon.innerHTML = "<i class='fa fa-plus' aria-hidden='true'></i>";
+        } else {
+            option.classList.add("active");
+            optionsIcon.innerHTML = '<i class="fa fa-minus" aria-hidden="true"></i>';
+        }
+
+    }
+
     function addtocart(id, amnt) {
         alert(id);
         const xhttp = new XMLHttpRequest();

@@ -78,7 +78,7 @@ class Model extends Db
     {
 
         if ($searchType == "name") {
-            $sqlstmt = "select * from products where p_name = '$str_';";
+            $sqlstmt = "select * from products where name = '$str_';";
         } elseif ($searchType == "price") {
             if ($str_ == "30") {
                 $sqlstmt = "select * from products where price BETWEEN 1 AND '$str_';";

@@ -146,7 +146,12 @@ body main #sec1 #search form label {
   align-items: center;
   justify-content: center;
 }
-body main #sec1 #search form label i {
+body main #sec1 #search form label button {
+  height: 100%;
+  background: transparent;
+  border: none;
+}
+body main #sec1 #search form label button i {
   height: 100%;
   padding: 0px 1vw;
   border: none;

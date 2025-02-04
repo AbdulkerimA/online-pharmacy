@@ -160,11 +160,13 @@ body{
             /*add products page*/
             #addproduct{
                 width: 90%;
+                height: 95%;
                 display: flex;
                 justify-content: center;
                 flex-wrap: wrap;
-                /*overflow-y: scroll;
-                scrollbar-width: none;*/
+                overflow: scroll;
+                scrollbar-width: none;
+                // background-color: yellow;
                 #uploadimg{
                     width: 80%;
                     height: 30vh;
@@ -256,6 +258,8 @@ body{
                 width:90%;
                 height: 100%;
                 padding: 2px;
+                overflow-y: scroll;
+                scrollbar-width: none;
                 table{
                     // margin: 10vh 1vw;
                     thead{

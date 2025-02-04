@@ -74,25 +74,19 @@ class Model extends Db
         }
     }
 
-    public function getProductByType($searchType, $str_)
+    protected function getProductByType($searchType, $str_)
     {
 
-        if ($searchType == "name") {
-            $sqlstmt = "select * from products where name = '$str_';";
-        } elseif ($searchType == "price") {
-            if ($str_ == "30") {
-                $sqlstmt = "select * from products where price BETWEEN 1 AND '$str_';";
-            } elseif ($str_ == "90") {
-                $sqlstmt = "select * from products where price BETWEEN 30 AND '$str_';";
-            } elseif ($str_ == "120") {
-                $sqlstmt = "select * from products where price BETWEEN 90 AND '$str_';";
-            } else {
-                $sqlstmt = "select * from products where price BETWEEN 120 AND '$str_';";
-            }
+        if ($searchType == "sort") {
+            $sqlstmt = "SELECT * FROM `products` WHERE pname = '$str_'";
         } elseif ($searchType == "All") {
             $sqlstmt = "select * from products";
+        } else if ($searchType == 'new') {
+            $sqlstmt = "SELECT * FROM `products` ORDER BY date DESC";
+        } elseif ($searchType == 'cheap') {
+            $sqlstmt = "SELECT * FROM `products` ORDER BY price ";
         } else {
-            $sqlstmt = "select * from products where type = '$str_';";
+            $sqlstmt = "SELECT * FROM `products` WHERE `catagory` = '$str_';";
         }
 
         if ($result = $this->conn()->query($sqlstmt)) {

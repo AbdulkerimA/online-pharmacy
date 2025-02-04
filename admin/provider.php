@@ -10,6 +10,7 @@ if (isset($_SESSION['role'])) {
 }
 
 include "../inc/includes.admin.inc.php";
+require_once '../catagories.php';
 
 $error = null;
 

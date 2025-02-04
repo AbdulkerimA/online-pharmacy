@@ -464,18 +464,15 @@ body main #sec6 #testimonialssection #leftclick:hover, body main #sec6 #testimon
 }
 body main #sec6 #testimonialssection #testimonialsbox {
   padding: 2vh 2vw;
-  background-color: #ffffff;
-  border: 2px solid #003755;
   border-radius: 1vh;
+}
+body main #sec6 #testimonialssection #testimonialsbox .swiper-slide {
+  width: 40vw;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
-body main #sec6 #testimonialssection #testimonialsbox #testimonial {
-  width: 100%;
-  display: flex;
-}
-body main #sec6 #testimonialssection #testimonialsbox #testimonial img {
+body main #sec6 #testimonialssection #testimonialsbox .swiper-slide img {
   width: 60px;
   height: 60px;
   margin-right: 1vw;
@@ -483,7 +480,7 @@ body main #sec6 #testimonialssection #testimonialsbox #testimonial img {
   border: 1px solid #003755;
   border-radius: 50%;
 }
-body main #sec6 #testimonialssection #testimonialsbox #testimonial #comment {
+body main #sec6 #testimonialssection #testimonialsbox .swiper-slide #comment {
   width: 75%;
   font-size: 0.9rem;
   color: #003755;

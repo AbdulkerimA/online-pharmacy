@@ -157,11 +157,12 @@ body main #main #dashboard #users {
 }
 body main #main #addproduct {
   width: 90%;
+  height: 95%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  /*overflow-y: scroll;
-  scrollbar-width: none;*/
+  overflow: scroll;
+  scrollbar-width: none;
 }
 body main #main #addproduct #uploadimg {
   width: 80%;
@@ -248,6 +249,8 @@ body main #main #customers, body main #main #viewproducts, body main #main #user
   width: 90%;
   height: 100%;
   padding: 2px;
+  overflow-y: scroll;
+  scrollbar-width: none;
 }
 body main #main #customers table thead, body main #main #viewproducts table thead, body main #main #users table thead {
   background-color: #1A4B66;

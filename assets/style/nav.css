@@ -41,6 +41,13 @@ body nav #top #links span i {
   color: #90e0ef;
   font-size: 1.2rem;
 }
+body nav #top #links span a #count{
+  background-color: #90e0ef;
+  color:#ffffff;
+  padding: 1px 6px;
+  margin: 0px;
+  border-radius: 50%;
+}
 body nav #top #links #sub {
   background-color: #90e0ef;
   color: #ffffff;

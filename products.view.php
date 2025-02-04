@@ -12,34 +12,44 @@
     <main id="productsmain">
         <section id="head">
             <span id="text">filter by</span>
-            <select name="filter by" id="filterby">
+            <!-- <select name="filter by" id="filterby" onchange="sortBy(this.value)">
                 <option value="alphabet">alphabet</option>
                 <option value="pricelow">price:low to high</option>
                 <option value="pricehigh">price: high to low</option>
-            </select>
+            </select> -->
+            <form action="./products.php" method="get">
+                <input type="search" name="key" id="sproduct">
+                <button type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </form>
         </section>
         <section id="products">
             <div id="filterby">
-                <?php for ($i = 0; $i < 5; $i++): ?>
-                    <div id="cont" class="cont">
-                        <div id="header" onclick="makeActive()">
-                            <span id="text">
-                                catagory
-                            </span>
-                            <div id="icon">
-                                <i class="fa fa-plus" aria-hidden="true"></i>
-                            </div>
+
+                <div id="cont" class="cont">
+                    <div id="header" class="active" onclick="makeActive()">
+                        <span id="text">
+                            catagory
+                        </span>
+                        <div id="icon">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
                         </div>
-                        <?php for ($j = 0; $j < 3; $j++): ?>
-                            <div id="options" class="options-<?php echo $j; ?>">
-                                <div id="option" class="option-<?php echo $j; ?>">
-                                    <input type="checkbox" name="personalcare-<?php echo $j; ?>" id="pcare" class="pcare-<?php echo $j; ?>">
-                                    <label for="pcare-<?php echo $j; ?>">Personal Care</label>
-                                </div>
-                            </div>
-                        <?php endfor; ?>
                     </div>
-                <?php endfor ?>
+
+                    <div id="options">
+                        <div id="option">
+                            <a href="./products.php">all</a>
+                        </div>
+                        <?php foreach ($catagories as $cat): ?>
+                            <div id="option">
+                                <a href="./products.php?s=c&key=<?= $cat['link'] ?>"><?= $cat['lable'] ?></a>
+                            </div>
+                        <?php endforeach ?>
+                    </div>
+
+                </div>
+
             </div>
             <div id="productscont">
                 <?php foreach ($products as $product): ?>
@@ -55,7 +65,7 @@
                     </div>
                 <?php endforeach ?>
             </div>
-            <p id="test">test</p>
+            <!-- <p id="test">test</p> -->
         </section>
     </main>
 </body>
@@ -83,10 +93,14 @@
     }
 
     function addtocart(id, amnt) {
-        alert(id);
+        // alert('product added to the cart');
         const xhttp = new XMLHttpRequest();
         xhttp.onload = function() {
-            document.getElementById("test").innerHTML = this.responseText;
+            if (this.responseText == 'login first') {
+                window.location.assign("./loginandsignup.php");
+            } else {
+                window.location.reload();
+            }
         }
         var data = {
             pid: id,

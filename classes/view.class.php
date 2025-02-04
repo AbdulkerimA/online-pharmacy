@@ -108,11 +108,13 @@ class View extends Model
             array_push(
                 $products,
                 array(
-                    "pName" => $row['pname'],
-                    "pdisc" => $row['pdisc'],
-                    "imgUrl" => $row['img'],
+                    "pid" => $row['pid'],
+                    "name" => $row['pname'],
+                    "amnt" => $row['amount'],
+                    "img" => $row['img'],
                     "price" => $row['price'],
-                    "type" => $row['catagory']
+                    "type" => $row['catagory'],
+                    "disc" => $row['discription'],
                 )
             );
         }

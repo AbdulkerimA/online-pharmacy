@@ -1,5 +1,7 @@
 <?php
+require_once './inc/includes.inc.php';
 session_start();
+$obj = new View();
 ?>
 
 <head>
@@ -16,10 +18,17 @@ session_start();
             <span><a href="./about.php">about us</a></span>
             <span><a href="./products.php">products</a></span>
             <?php if (isset($_SESSION['islogedin']) && $_SESSION['islogedin']): ?>
+                <?php $res = $obj->displayProductsOnTheCart($_SESSION['user']); ?>
                 <span id="uname">
                     <?= $_SESSION['user'] ?>
                     <a href="./logout.php">
                         <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    </a>
+                </span>
+                <span>
+                    <a href="./cart.php">
+                        <span id="count"><?= count($res) ?></span>
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                     </a>
                 </span>
             <?php endif ?>
@@ -29,11 +38,6 @@ session_start();
                 </span>
             <?php endif ?>
 
-            <span>
-                <a href="./cart.php">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                </a>
-            </span>
         </div>
     </div>
 

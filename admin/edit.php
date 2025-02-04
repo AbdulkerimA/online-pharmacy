@@ -1,6 +1,7 @@
 <?php
 
 require '../inc/includes.admin.inc.php';
+require_once '../catagories.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     if (!isset($_GET['id']) || empty($_GET['id'])) {

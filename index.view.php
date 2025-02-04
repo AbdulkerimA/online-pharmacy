@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./lib/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./assets/style/index.css">
     <title>MEDIAEVEN</title>
 </head>
@@ -24,7 +25,7 @@
 
             <div id="search">
                 <form action="./products.php" method="get">
-                    <input type="text" name="search" id="searchinp" required placeholder="what are you looking for">
+                    <input type="text" name="key" id="searchinp" required placeholder="what are you looking for">
                     <label for="search">
                         <button type="submit">
                             <i class="fa fa-search" aria-hidden="true"></i>
@@ -83,20 +84,20 @@
         <section id="sec3">
             <div id="notice">
                 <h4>
-                    today's best deal
+                    cheapest products
                 </h4>
                 <span><i><a href="./products.php">view all ></a></i></span>
             </div>
             <div id="products">
                 <?php for ($i = 0; $i < 4; $i++): ?>
                     <div id="product">
-                        <img src="./assets/pics/face_wash_cleansers.png" alt="product">
+                        <img src="<?= $cheap[$i]['img'] ?>" alt="product">
                         <span id="pname">
-                            product name
+                            <?= $cheap[$i]['name'] ?>
                         </span>
-                        <span id="price">250 birr</span>
-                        <span id="discount">20% off</span>
-                        <button>
+                        <span id="price"><?= $cheap[$i]['price'] ?> ETB</span>
+                        <!-- <span id="discount">20% off</span> -->
+                        <button onclick="addtocart(<?= $prod['pid'] ?>,<?= $prod['amnt'] ?>)">
                             add to cart
                         </button>
                     </div>
@@ -136,18 +137,18 @@
                 </h3>
             </header>
             <div id="products">
-                <?php for ($i = 0; $i < 16; $i++): ?>
+                <?php foreach ($newprod as $prod): ?>
                     <div id="product">
-                        <img src="./assets/pics/beard_oil.png" alt="product">
+                        <img src="<?= $prod['img'] ?>" alt="product">
                         <span id="pname">
-                            product name
+                            <?= $prod['name'] ?>
                         </span>
-                        <span id="price">250 birr</span>
-                        <button>
+                        <span id="price"><?= $prod['price'] ?> ETB</span>
+                        <button onclick="addtocart(<?= $prod['pid'] ?>,<?= $prod['amnt'] ?>)">
                             add to cart
                         </button>
                     </div>
-                <?php endfor ?>
+                <?php endforeach ?>
             </div>
             <div id="explore">
                 <a href="./products.php">
@@ -163,12 +164,22 @@
                     testimonials
                 </h3>
             </header>
-            <div id="testimonialssection">
-                <div id="leftclick">
-                    <?php echo "<" ?>
-                </div>
-                <div id="testimonialsbox">
-                    <div id="testimonial">
+            <div id="testimonialssection" class="swiper mySwiper">
+                <!-- <div id="leftclick">
+                    <
+                </div> -->
+                <div id="testimonialsbox" class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./" alt="user">
+                        <p id="comment">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            Sed magni voluptatem doloribus quasi illum itaque officiis sint voluptate
+                            accusamus cupiditate voluptates tempore vitae, sapiente,
+                            natus quaerat fugiat dolore cum labore?
+                        </p>
+                    </div>
+
+                    <div class="swiper-slide">
                         <img src="./" alt="user">
                         <p id="comment">
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -178,10 +189,13 @@
                         </p>
                     </div>
                 </div>
-                <div id="rightclick">
+                <!-- <div id="rightclick">
                     >
-                </div>
+                </div> -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
             </div>
+
         </section>
 
         <!-- subscribe -->
@@ -211,6 +225,37 @@
     </main>
     <!-- footer -->
     <?php require_once("./footer.php") ?>
+    <script src="./lib/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+        function addtocart(id, amnt) {
+            // alert('product added to the cart');
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function() {
+                if (this.responseText == 'login first') {
+                    window.location.assign("./loginandsignup.php");
+                } else {
+                    window.location.reload();
+                }
+            }
+            var data = {
+                pid: id,
+                amnt: amnt
+            };
+
+            // Convert the data object to a JSON string
+            var jsonData = JSON.stringify(data);
+            xhttp.open("POST", "addtocart.php");
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send(jsonData);
+        }
+    </script>
 </body>
 
 </html>

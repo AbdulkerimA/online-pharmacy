@@ -29,7 +29,14 @@
             </div>
             <div id="catagory">
                 <label for="pcatagory">catagory</label>
-                <input required type="text" name="pcatagory" id="pcatagory">
+                <!-- <input required type="text" name="pcatagory" id="pcatagory"> -->
+                <select name="pcatagory" id="pcatagory">
+                    <?php foreach ($catagories as $catagory): ?>
+                        <option value="<?= $catagory['link'] ?>">
+                            <?= $catagory['lable'] ?>
+                        </option>
+                    <?php endforeach ?>
+                </select>
             </div>
             <div id="price">
                 <label for="price">price</label>

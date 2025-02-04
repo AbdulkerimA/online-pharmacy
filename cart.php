@@ -2,6 +2,12 @@
 include "./inc/includes.inc.php";
 require_once("./nav.php");
 
+if (!isset($_SESSION['islogedin'])) {
+    header("Location:./loginandsignup.php");
+    // echo "login first";
+    return;
+}
+
 
 $_SESSION['tid'] = "tx-" . uniqid();
 
